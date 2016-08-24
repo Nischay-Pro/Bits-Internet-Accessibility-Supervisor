@@ -1,6 +1,4 @@
-﻿
-Imports System.Net
-
+﻿Imports System.Net
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim ini As New IniFile
@@ -43,4 +41,12 @@ Public Class Form1
             Return False
         End Try
     End Function
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        settings.Show()
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        End
+    End Sub
 End Class

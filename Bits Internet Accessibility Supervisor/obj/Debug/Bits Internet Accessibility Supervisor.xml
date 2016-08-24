@@ -32,6 +32,11 @@ Bits Internet Accessibility Supervisor
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.loading">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
