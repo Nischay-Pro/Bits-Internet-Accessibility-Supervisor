@@ -101,6 +101,12 @@
     <Compile Include="load.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="load.resx">
       <DependentUpon>load.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -161,6 +170,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="network.ico" />
+    <None Include="Resources\loading1.gif" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\checked.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\defaultdenied_bottombar.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

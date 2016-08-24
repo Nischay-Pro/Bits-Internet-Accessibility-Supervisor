@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Bits_Internet_Accessibility_Supervisor.load
+            Me.MainForm = Global.Bits_Internet_Accessibility_Supervisor.loadman
         End Sub
     End Class
 End Namespace

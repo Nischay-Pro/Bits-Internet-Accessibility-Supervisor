@@ -3,7 +3,15 @@ Imports System.Net
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim ini As New IniFile
+        ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
+        Dim welcomeme As String = Nothing
+        If ini.GetKeyValue("Authentication", "Username") = "f2015606" Then
+            welcomeme = "My Lord"
+        Else
+            welcomeme = ini.GetKeyValue("Authentication", "Username")
+        End If
+        Label1.Text = "Welcome " & welcomeme
     End Sub
     Dim time As Integer
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
