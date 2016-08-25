@@ -28,10 +28,16 @@
         Else
             ini.SetKeyValue("Settings", "Ninja", "False")
         End If
+        If MetroCheckBox3.Checked = True Then
+            ini.SetKeyValue("Settings", "Automatic", "True")
+        Else
+            ini.SetKeyValue("Settings", "Automatic", "False")
+        End If
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         MetroButton1.Enabled = False
         MetroButton2.Enabled = True
         MetroTabControl1.Focus()
+
     End Sub
     Private Sub ChangeDetect()
         MetroButton1.Enabled = True
@@ -72,6 +78,9 @@
             MetroCheckBox1.Checked = False
             MetroCheckBox2.Enabled = False
         End If
+        If ini.GetKeyValue("Settings", "Automatic") = "True" Then
+            MetroCheckBox3.Checked = True
+        End If
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         MetroButton1.Enabled = False
         Label3.Text += " | Build " & My.Application.Info.Version.ToString
@@ -88,5 +97,17 @@
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor")
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+        Process.Start("https://www.facebook.com/nischay.pro")
+    End Sub
+
+    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
+        If MessageBox.Show("Are you sure you want to revoke your Cyberoam Settings?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Kill(My.Application.Info.DirectoryPath & "\config.ini")
+            Process.Start(Application.ExecutablePath)
+            End
+        End If
     End Sub
 End Class

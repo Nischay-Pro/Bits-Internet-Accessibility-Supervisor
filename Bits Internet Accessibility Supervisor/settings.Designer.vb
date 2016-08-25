@@ -25,22 +25,24 @@ Partial Class settings
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(settings))
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
-        Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
-        Me.MetroCheckBox2 = New MetroFramework.Controls.MetroCheckBox()
+        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroRadioButton3 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroRadioButton2 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroRadioButton1 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroCheckBox2 = New MetroFramework.Controls.MetroCheckBox()
+        Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
+        Me.MetroCheckBox3 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -55,13 +57,14 @@ Partial Class settings
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(23, 63)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 2
+        Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(436, 354)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
         '
         'MetroTabPage1
         '
+        Me.MetroTabPage1.Controls.Add(Me.MetroButton3)
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel2)
         Me.MetroTabPage1.Controls.Add(Me.MetroRadioButton3)
         Me.MetroTabPage1.Controls.Add(Me.MetroRadioButton2)
@@ -80,60 +83,14 @@ Partial Class settings
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
         '
-        'MetroTabPage2
+        'MetroButton3
         '
-        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox2)
-        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox1)
-        Me.MetroTabPage2.HorizontalScrollbarBarColor = True
-        Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.HorizontalScrollbarSize = 10
-        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
-        Me.MetroTabPage2.Name = "MetroTabPage2"
-        Me.MetroTabPage2.Size = New System.Drawing.Size(428, 312)
-        Me.MetroTabPage2.TabIndex = 1
-        Me.MetroTabPage2.Text = "Application Control"
-        Me.MetroTabPage2.VerticalScrollbarBarColor = True
-        Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.VerticalScrollbarSize = 10
-        '
-        'MetroButton1
-        '
-        Me.MetroButton1.Enabled = False
-        Me.MetroButton1.Location = New System.Drawing.Point(238, 423)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(110, 23)
-        Me.MetroButton1.TabIndex = 5
-        Me.MetroButton1.Text = "Apply"
-        Me.MetroButton1.UseSelectable = True
-        '
-        'MetroButton2
-        '
-        Me.MetroButton2.Location = New System.Drawing.Point(354, 423)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(110, 23)
-        Me.MetroButton2.TabIndex = 6
-        Me.MetroButton2.Text = "Cancel"
-        Me.MetroButton2.UseSelectable = True
-        '
-        'MetroCheckBox1
-        '
-        Me.MetroCheckBox1.AutoSize = True
-        Me.MetroCheckBox1.Location = New System.Drawing.Point(19, 25)
-        Me.MetroCheckBox1.Name = "MetroCheckBox1"
-        Me.MetroCheckBox1.Size = New System.Drawing.Size(125, 15)
-        Me.MetroCheckBox1.TabIndex = 2
-        Me.MetroCheckBox1.Text = "Start with Windows"
-        Me.MetroCheckBox1.UseSelectable = True
-        '
-        'MetroCheckBox2
-        '
-        Me.MetroCheckBox2.AutoSize = True
-        Me.MetroCheckBox2.Location = New System.Drawing.Point(19, 46)
-        Me.MetroCheckBox2.Name = "MetroCheckBox2"
-        Me.MetroCheckBox2.Size = New System.Drawing.Size(127, 15)
-        Me.MetroCheckBox2.TabIndex = 3
-        Me.MetroCheckBox2.Text = "Start in Background"
-        Me.MetroCheckBox2.UseSelectable = True
+        Me.MetroButton3.Location = New System.Drawing.Point(106, 117)
+        Me.MetroButton3.Name = "MetroButton3"
+        Me.MetroButton3.Size = New System.Drawing.Size(177, 23)
+        Me.MetroButton3.TabIndex = 7
+        Me.MetroButton3.Text = "Revoke Cyberoam Profile"
+        Me.MetroButton3.UseSelectable = True
         '
         'MetroLabel2
         '
@@ -151,9 +108,9 @@ Partial Class settings
         Me.MetroRadioButton3.AutoSize = True
         Me.MetroRadioButton3.Location = New System.Drawing.Point(258, 73)
         Me.MetroRadioButton3.Name = "MetroRadioButton3"
-        Me.MetroRadioButton3.Size = New System.Drawing.Size(47, 15)
+        Me.MetroRadioButton3.Size = New System.Drawing.Size(54, 15)
         Me.MetroRadioButton3.TabIndex = 15
-        Me.MetroRadioButton3.Text = "Stud"
+        Me.MetroRadioButton3.Text = "Studd"
         Me.MetroRadioButton3.UseSelectable = True
         '
         'MetroRadioButton2
@@ -217,6 +174,43 @@ Partial Class settings
         Me.MetroLabel1.TabIndex = 11
         Me.MetroLabel1.Text = "Profile Name :"
         '
+        'MetroTabPage2
+        '
+        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox3)
+        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox2)
+        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox1)
+        Me.MetroTabPage2.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.HorizontalScrollbarSize = 10
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage2.Name = "MetroTabPage2"
+        Me.MetroTabPage2.Size = New System.Drawing.Size(428, 312)
+        Me.MetroTabPage2.TabIndex = 1
+        Me.MetroTabPage2.Text = "Application Control"
+        Me.MetroTabPage2.VerticalScrollbarBarColor = True
+        Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.VerticalScrollbarSize = 10
+        '
+        'MetroCheckBox2
+        '
+        Me.MetroCheckBox2.AutoSize = True
+        Me.MetroCheckBox2.Location = New System.Drawing.Point(19, 46)
+        Me.MetroCheckBox2.Name = "MetroCheckBox2"
+        Me.MetroCheckBox2.Size = New System.Drawing.Size(127, 15)
+        Me.MetroCheckBox2.TabIndex = 3
+        Me.MetroCheckBox2.Text = "Start in Background"
+        Me.MetroCheckBox2.UseSelectable = True
+        '
+        'MetroCheckBox1
+        '
+        Me.MetroCheckBox1.AutoSize = True
+        Me.MetroCheckBox1.Location = New System.Drawing.Point(19, 25)
+        Me.MetroCheckBox1.Name = "MetroCheckBox1"
+        Me.MetroCheckBox1.Size = New System.Drawing.Size(125, 15)
+        Me.MetroCheckBox1.TabIndex = 2
+        Me.MetroCheckBox1.Text = "Start with Windows"
+        Me.MetroCheckBox1.UseSelectable = True
+        '
         'MetroTabPage3
         '
         Me.MetroTabPage3.Controls.Add(Me.Label3)
@@ -235,6 +229,40 @@ Partial Class settings
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 10
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label3.Location = New System.Drawing.Point(39, 232)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(158, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Built with 💖 by Nischay Pro"
+        '
+        'MetroLabel4
+        '
+        Me.MetroLabel4.AutoSize = True
+        Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.MetroLabel4.Location = New System.Drawing.Point(128, 163)
+        Me.MetroLabel4.Name = "MetroLabel4"
+        Me.MetroLabel4.Size = New System.Drawing.Size(256, 30)
+        Me.MetroLabel4.TabIndex = 14
+        Me.MetroLabel4.Text = "Click on OctoCat is view this project on Github " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(and contribute too)"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github
+        Me.PictureBox1.Location = New System.Drawing.Point(42, 146)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 13
+        Me.PictureBox1.TabStop = False
+        '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
@@ -248,39 +276,34 @@ Partial Class settings
     "fy the login process of Cyberroam Clients in Bits Hyderabad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Campus." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created " &
     "using .net Technologies."
         '
-        'PictureBox1
+        'MetroButton1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github
-        Me.PictureBox1.Location = New System.Drawing.Point(42, 146)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 13
-        Me.PictureBox1.TabStop = False
+        Me.MetroButton1.Enabled = False
+        Me.MetroButton1.Location = New System.Drawing.Point(238, 423)
+        Me.MetroButton1.Name = "MetroButton1"
+        Me.MetroButton1.Size = New System.Drawing.Size(110, 23)
+        Me.MetroButton1.TabIndex = 5
+        Me.MetroButton1.Text = "Apply"
+        Me.MetroButton1.UseSelectable = True
         '
-        'MetroLabel4
+        'MetroButton2
         '
-        Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel4.Location = New System.Drawing.Point(128, 163)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(256, 30)
-        Me.MetroLabel4.TabIndex = 14
-        Me.MetroLabel4.Text = "Click on OctoCat is view this project on Github " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(and contribute too)"
+        Me.MetroButton2.Location = New System.Drawing.Point(354, 423)
+        Me.MetroButton2.Name = "MetroButton2"
+        Me.MetroButton2.Size = New System.Drawing.Size(110, 23)
+        Me.MetroButton2.TabIndex = 6
+        Me.MetroButton2.Text = "Cancel"
+        Me.MetroButton2.UseSelectable = True
         '
-        'Label3
+        'MetroCheckBox3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Malgun Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label3.Location = New System.Drawing.Point(39, 232)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(158, 13)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Built with 💖 by Nischay Pro"
+        Me.MetroCheckBox3.AutoSize = True
+        Me.MetroCheckBox3.Location = New System.Drawing.Point(19, 100)
+        Me.MetroCheckBox3.Name = "MetroCheckBox3"
+        Me.MetroCheckBox3.Size = New System.Drawing.Size(224, 15)
+        Me.MetroCheckBox3.TabIndex = 4
+        Me.MetroCheckBox3.Text = "Enable Automatic Network Speed Test"
+        Me.MetroCheckBox3.UseSelectable = True
         '
         'settings
         '
@@ -326,4 +349,6 @@ Partial Class settings
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Label3 As Label
+    Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroCheckBox3 As MetroFramework.Controls.MetroCheckBox
 End Class

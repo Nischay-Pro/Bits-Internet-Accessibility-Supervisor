@@ -30,11 +30,13 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +51,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Malgun Gothic", 12.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label1.Location = New System.Drawing.Point(83, 40)
+        Me.Label1.Location = New System.Drawing.Point(83, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(140, 23)
         Me.Label1.TabIndex = 0
@@ -68,6 +70,7 @@ Partial Class Form1
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Controls.Add(Me.Label6)
         Me.MetroPanel1.Controls.Add(Me.Label4)
         Me.MetroPanel1.Controls.Add(Me.PictureBox1)
         Me.MetroPanel1.Controls.Add(Me.Label1)
@@ -92,6 +95,16 @@ Partial Class Form1
         Me.Label4.Size = New System.Drawing.Size(30, 12)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "NaAN"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.user_1_
+        Me.PictureBox1.Location = New System.Drawing.Point(13, 20)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
         '
         'Label3
         '
@@ -126,15 +139,21 @@ Partial Class Form1
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Checking for Updates"
         '
-        'PictureBox1
+        'Label6
         '
-        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.user_1_
-        Me.PictureBox1.Location = New System.Drawing.Point(13, 20)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label6.Location = New System.Drawing.Point(83, 65)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(204, 19)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Network Speed : Calculating"
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 1000
         '
         'Form1
         '
@@ -168,4 +187,6 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Timer2 As Timer
 End Class

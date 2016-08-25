@@ -45,10 +45,15 @@ def:
             If browser.Document.Body.InnerText.Contains("You have successfully logged in") Then
                 loadman.Loggedin = True
                 Me.Close()
+            ElseIf browser.Document.Body.InnerText.Contains("Your data transfer has been exceeded, Please contact the administrator") Then
+                GenerateNotification("Your data transfer has exceeded. :(", EventType.Warning, 5000)
+            ElseIf browser.Document.Body.InnerText.Contains("The system could not log you on. Make sure your password is correct") Then
+                GenerateNotification("Your credentials were incorrect. Retry again.", EventType.Warning, 5000)
             Else
-
+                GenerateNotification("Server is not responding. Please try again later", EventType.Warning, 5000)
             End If
-        Else GoTo def
+        Else
+            GoTo def
         End If
     End Sub
     Private Sub wait(ByVal interval As Integer)
@@ -60,7 +65,7 @@ def:
         sw.Stop()
     End Sub
 
-    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        End
     End Sub
 End Class

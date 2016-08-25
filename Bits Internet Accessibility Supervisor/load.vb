@@ -1,11 +1,11 @@
 ﻿Imports System.Net
+Imports System.Net.NetworkInformation
 
 Public Class loadman
     Public Loggedin As Boolean = False
     Dim checkstat As Boolean = False
     Dim something As Integer = 0
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        something += 1
         If Loggedin = True Then
             Dim newman As New Form1
             newman.Show()
@@ -17,8 +17,10 @@ Public Class loadman
             Dim logina As New login
             logina.Show()
         End If
-        If openlogin = False And something > 20 Then
+        If My.Application.OpenForms.OfType(Of login).Count = 0 And something > 20 Then
             Application.Restart()
+        Else
+            something += 1
         End If
     End Sub
     Private Sub wait(ByVal interval As Integer)
@@ -58,7 +60,8 @@ abc:
                 browser.Document.GetElementById("btnSubmit").InvokeMember("click")
                 wait(2000)
             Catch ex As Exception
-
+                MsgBox("Couldn't Connect to Cyberoam. Either Cyberoam is down or your not connected to a Cyberoam Network.", MsgBoxStyle.Exclamation, "Cyberoam Connection Failure")
+                End
             End Try
         Else
             wait(1000)
@@ -84,17 +87,13 @@ def:
 
     Private Sub Check()
         Try
-            If IsConnectionAvailable() = False Then
-                login.Show()
-            Else
-                CheckLogin()
-            End If
+            CheckLogin()
         Catch ex As Exception
 
         End Try
     End Sub
     Public Function IsConnectionAvailable() As Boolean
-        Dim objUrl As New System.Uri("http://www.google.com/")
+        Dim objUrl As New System.Uri("https://www.google.com")
         Dim objWebReq As System.Net.WebRequest
         objWebReq = System.Net.WebRequest.Create(objUrl)
         objWebReq.Proxy = Nothing
