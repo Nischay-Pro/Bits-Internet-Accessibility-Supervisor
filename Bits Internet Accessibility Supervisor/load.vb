@@ -7,10 +7,16 @@ Public Class loadman
     Dim something As Integer = 0
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If Loggedin = True Then
-            Dim newman As New Form1
-            newman.Show()
-            Me.Close()
-            Timer1.Stop()
+            If Environment.CommandLine.Contains("hidden") Then
+                NotifyIcon1.Visible = True
+                Me.Hide()
+                Timer1.Stop()
+            Else
+                Dim newman As New Form1
+                newman.Show()
+                Me.Close()
+                Timer1.Stop()
+            End If
         End If
         If openlogin = True Then
             openlogin = False
@@ -19,6 +25,8 @@ Public Class loadman
         End If
         If My.Application.OpenForms.OfType(Of login).Count = 0 And something > 20 Then
             Application.Restart()
+        ElseIf My.Application.OpenForms.OfType(Of login).Count = 1 Then
+
         Else
             something += 1
         End If
@@ -71,9 +79,16 @@ def:
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             If browser.Document.Body.InnerText.Contains("You have successfully logged in") Then
                 Loggedin = True
-            Else
+            ElseIf browser.Document.Body.InnerText.Contains("Your data transfer has been exceeded, Please contact the administrator") Then
+                'GenerateNotification("Your data transfer has exceeded. :(", EventType.Warning, 5000)
                 openlogin = True
                 Exit Sub
+            ElseIf browser.Document.Body.InnerText.Contains("The system could not log you on. Make sure your password is correct") Then
+                'GenerateNotification("Your credentials were incorrect. Retry again.", EventType.Warning, 5000)
+                openlogin = True
+                Exit Sub
+            Else
+                GenerateNotification("Server is not responding. Please try again later", EventType.Warning, 5000)
             End If
         Else GoTo def
         End If
@@ -89,7 +104,8 @@ def:
         Try
             CheckLogin()
         Catch ex As Exception
-
+            GenerateNotification("Something which should not happen happened. :(", EventType.Critical, 5000)
+            End
         End Try
     End Sub
     Public Function IsConnectionAvailable() As Boolean
@@ -109,4 +125,11 @@ def:
             Return False
         End Try
     End Function
+
+    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+        NotifyIcon1.Visible = False
+        Dim newman As New Form1
+        newman.Show()
+        Me.Close()
+    End Sub
 End Class

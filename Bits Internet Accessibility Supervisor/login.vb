@@ -23,6 +23,7 @@
     End Sub
     Private WithEvents browser As WebBrowser
     Private Sub CheckLogin()
+        PictureBox2.Enabled = False
         browser = New WebBrowser
         browser.ScriptErrorsSuppressed = True
         browser.Navigate("http://172.16.0.30:8090/httpclient.html")
@@ -43,8 +44,8 @@ abc:
 def:
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             If browser.Document.Body.InnerText.Contains("You have successfully logged in") Then
-                loadman.Loggedin = True
-                Me.Close()
+                Process.Start(Application.ExecutablePath)
+                End
             ElseIf browser.Document.Body.InnerText.Contains("Your data transfer has been exceeded, Please contact the administrator") Then
                 GenerateNotification("Your data transfer has exceeded. :(", EventType.Warning, 5000)
             ElseIf browser.Document.Body.InnerText.Contains("The system could not log you on. Make sure your password is correct") Then
@@ -55,6 +56,7 @@ def:
         Else
             GoTo def
         End If
+        PictureBox2.Enabled = True
     End Sub
     Private Sub wait(ByVal interval As Integer)
         Dim sw As New Stopwatch

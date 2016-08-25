@@ -29,14 +29,15 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +71,7 @@ Partial Class Form1
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Controls.Add(Me.Label7)
         Me.MetroPanel1.Controls.Add(Me.Label6)
         Me.MetroPanel1.Controls.Add(Me.Label4)
         Me.MetroPanel1.Controls.Add(Me.PictureBox1)
@@ -84,6 +86,17 @@ Partial Class Form1
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label6.Location = New System.Drawing.Point(83, 65)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(204, 19)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Network Speed : Calculating"
         '
         'Label4
         '
@@ -139,21 +152,21 @@ Partial Class Form1
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Checking for Updates"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.Label6.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label6.Location = New System.Drawing.Point(83, 65)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(204, 19)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Network Speed : Calculating"
-        '
         'Timer2
         '
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1000
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label7.Location = New System.Drawing.Point(369, 7)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(80, 19)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Reconnect"
         '
         'Form1
         '
@@ -168,7 +181,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Resizable = False
-        Me.Text = "Bits Internet Accessiblity Supervisor"
+        Me.Text = "Bits Internet Accessibility Supervisor"
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
@@ -189,4 +202,5 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents Label7 As Label
 End Class

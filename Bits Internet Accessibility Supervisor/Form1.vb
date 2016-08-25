@@ -121,4 +121,9 @@ ad:
             LoadSettings(False)
         End If
     End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        Process.Start(Application.ExecutablePath)
+        End
+    End Sub
 End Class

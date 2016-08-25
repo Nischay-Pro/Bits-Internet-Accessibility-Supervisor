@@ -1,4 +1,6 @@
-﻿Public Class settings
+﻿Imports System.IO
+
+Public Class settings
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
         Me.Close()
     End Sub
@@ -37,7 +39,7 @@
         MetroButton1.Enabled = False
         MetroButton2.Enabled = True
         MetroTabControl1.Focus()
-
+        GenerateNotification("Settings Saved Successfully.", EventType.Information, 3000)
     End Sub
     Private Sub ChangeDetect()
         MetroButton1.Enabled = True
@@ -89,12 +91,61 @@
     Private Sub MetroCheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles MetroCheckBox1.CheckedChanged
         If MetroCheckBox1.Checked = True Then
             MetroCheckBox2.Enabled = True
+            RegKeyAdd(False)
         Else
+            RegKeyDelete()
             MetroCheckBox2.Checked = False
             MetroCheckBox2.Enabled = False
         End If
     End Sub
-
+    Private Sub RegKeyAdd(ByVal Hidden As Boolean)
+        Try
+            Dim processman As New Process
+            Dim pathman As String = Path.GetPathRoot(Environment.SystemDirectory)
+            processman.StartInfo = New ProcessStartInfo()
+            processman.StartInfo.FileName = "cmd"
+            processman.StartInfo.RedirectStandardInput = True
+            processman.StartInfo.RedirectStandardOutput = True
+            processman.StartInfo.RedirectStandardError = True
+            processman.StartInfo.CreateNoWindow = True
+            processman.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            processman.StartInfo.UseShellExecute = False
+            processman.Start()
+            Dim writecommand As StreamWriter = processman.StandardInput
+            Dim appname As String = Application.ProductName
+            Dim apploc As String = Application.ExecutablePath
+            If Hidden = True Then
+                apploc += " -hidden"
+            End If
+            writecommand.WriteLine("reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" & " /V """ & appname & """" & " /t REG_SZ /F /D """ & apploc & """")
+            writecommand.Close()
+        Catch ex As Exception
+            GenerateNotification("Unable to register entry", EventType.Critical, 5000)
+        End Try
+    End Sub
+    Private Sub RegKeyDelete()
+        Try
+            Dim processman As New Process
+            Dim pathman As String = Path.GetPathRoot(Environment.SystemDirectory)
+            processman.StartInfo = New ProcessStartInfo()
+            processman.StartInfo.FileName = "cmd"
+            processman.StartInfo.RedirectStandardInput = True
+            processman.StartInfo.RedirectStandardOutput = True
+            processman.StartInfo.RedirectStandardError = True
+            processman.StartInfo.CreateNoWindow = True
+            processman.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            processman.StartInfo.UseShellExecute = False
+            processman.Start()
+            Dim writecommand As StreamWriter = processman.StandardInput
+            Dim appname As String = Application.ProductName
+            Dim apploc As String = Application.ExecutablePath
+            writecommand.WriteLine("reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" & " /V """ & appname & """" & " /F")
+            writecommand.Close()
+            processman.WaitForExit()
+        Catch ex As Exception
+            GenerateNotification("Unable to deregister entry", EventType.Critical, 5000)
+        End Try
+    End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor")
     End Sub
@@ -108,6 +159,15 @@
             Kill(My.Application.Info.DirectoryPath & "\config.ini")
             Process.Start(Application.ExecutablePath)
             End
+        End If
+    End Sub
+
+    Private Sub MetroCheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles MetroCheckBox2.CheckedChanged
+        If MetroCheckBox2.Checked = True Then
+            RegKeyAdd(True)
+        Else
+            RegKeyDelete()
+            RegKeyAdd(False)
         End If
     End Sub
 End Class

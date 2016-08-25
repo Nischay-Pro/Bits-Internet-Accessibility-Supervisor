@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class settings
     Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class settings
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(settings))
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
@@ -108,9 +108,9 @@ Partial Class settings
         Me.MetroRadioButton3.AutoSize = True
         Me.MetroRadioButton3.Location = New System.Drawing.Point(258, 73)
         Me.MetroRadioButton3.Name = "MetroRadioButton3"
-        Me.MetroRadioButton3.Size = New System.Drawing.Size(54, 15)
+        Me.MetroRadioButton3.Size = New System.Drawing.Size(47, 15)
         Me.MetroRadioButton3.TabIndex = 15
-        Me.MetroRadioButton3.Text = "Studd"
+        Me.MetroRadioButton3.Text = "Stud"
         Me.MetroRadioButton3.UseSelectable = True
         '
         'MetroRadioButton2
@@ -292,7 +292,7 @@ Partial Class settings
         Me.MetroButton2.Name = "MetroButton2"
         Me.MetroButton2.Size = New System.Drawing.Size(110, 23)
         Me.MetroButton2.TabIndex = 6
-        Me.MetroButton2.Text = "Cancel"
+        Me.MetroButton2.Text = "Close"
         Me.MetroButton2.UseSelectable = True
         '
         'MetroCheckBox3
@@ -319,6 +319,7 @@ Partial Class settings
         Me.Name = "settings"
         Me.Resizable = False
         Me.Text = "Settings"
+        Me.TopMost = True
         Me.MetroTabControl1.ResumeLayout(False)
         Me.MetroTabPage1.ResumeLayout(False)
         Me.MetroTabPage1.PerformLayout()
