@@ -1,5 +1,7 @@
-﻿Imports System.Net
+﻿Imports System.IO
+Imports System.Net
 Imports System.Net.NetworkInformation
+Imports System.Text
 
 Public Class Form1
     Public FormData As MetroFramework.Forms.MetroForm
@@ -25,6 +27,10 @@ Public Class Form1
         checkupdates.IsBackground = True
         checkupdates.SetApartmentState(Threading.ApartmentState.STA)
         checkupdates.Start()
+        Dim recheckaccess1 As New Threading.Thread(AddressOf RecheckAccess)
+        recheckaccess1.IsBackground = True
+        recheckaccess1.SetApartmentState(Threading.ApartmentState.STA)
+        recheckaccess1.Start()
     End Sub
     Dim time As Integer
 
@@ -36,8 +42,10 @@ Public Class Form1
             If stringman = My.Application.Info.Version.ToString Then
                 SetLabelText("No updates are available.", Label5)
             Else
-                If MessageBox.Show("A newer update is available. Would you like to download?", "Newer Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
-                    Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
+                If Not Environment.CommandLine.Contains("-lostnet") Then
+                    If MessageBox.Show("A newer update is available. Would you like to download?", "Newer Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                        Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
+                    End If
                 End If
                 SetLabelText("Newer update is available.", Label5)
             End If
@@ -45,6 +53,7 @@ Public Class Form1
             SetLabelText("Couldn't check for updates.", Label5)
         End Try
     End Sub
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         time += 1
         Timer1.Interval = 1000
@@ -90,17 +99,6 @@ ad:
         Me.ShowInTaskbar = True
         Me.Show()
     End Sub
-    Public Shared Function CheckForInternetConnection() As Boolean
-        Try
-            Using client = New WebClient()
-                Using stream = client.OpenRead("http://www.google.com")
-                    Return True
-                End Using
-            End Using
-        Catch
-            Return False
-        End Try
-    End Function
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
         settings.Show()
@@ -115,7 +113,7 @@ ad:
         Dim profilename As String = ini.GetKeyValue("Profile", "Profile Name")
         If profilename = "" Then
             settings.Show()
-        ElseIf WithNotification = True Then
+        ElseIf WithNotification = True And Not Environment.CommandLine.Contains("-hidden") Then
             GenerateNotification("Welcome " & profilename & ". You have been logged in successfully.", EventType.Information, 2000)
         End If
         Dim gender As String = ini.GetKeyValue("Profile", "Gender")
@@ -161,5 +159,39 @@ ad:
         If Label5.Text = "Newer update is available." Then
             Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
         End If
+    End Sub
+
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        If LostInternet = True Then
+            Process.Start(Application.ExecutablePath, "-hidden -lostnet")
+            End
+        End If
+    End Sub
+    Dim LostInternet As Boolean = False
+    Private Sub RecheckAccess()
+startman:
+        Try
+            Dim timespaner As New Stopwatch
+            timespaner.Start()
+            Dim request As WebRequest = WebRequest.Create("http://www.google.com")
+            request.Credentials = CredentialCache.DefaultCredentials
+            request.Timeout = 5 * 1000
+            Dim response As WebResponse = request.GetResponse()
+            timespaner.Stop()
+            Dim dataStream As Stream = response.GetResponseStream()
+            SetLabelText("Response Time : " & timespaner.ElapsedMilliseconds & " ms", Label9)
+            Dim reader As New StreamReader(dataStream)
+            Dim responseFromServer As String = reader.ReadToEnd()
+            reader.Close()
+            response.Close()
+            If responseFromServer.Contains("http://172.16.0.30:8090/httpclient.html") Then
+                LostInternet = True
+            Else
+            End If
+            Threading.Thread.Sleep(5000)
+            GoTo startman
+        Catch ex As Exception
+            LostInternet = True
+        End Try
     End Sub
 End Class

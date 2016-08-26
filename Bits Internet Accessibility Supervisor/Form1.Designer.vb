@@ -38,6 +38,9 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +74,8 @@ Partial Class Form1
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Controls.Add(Me.Label9)
+        Me.MetroPanel1.Controls.Add(Me.Label8)
         Me.MetroPanel1.Controls.Add(Me.Label7)
         Me.MetroPanel1.Controls.Add(Me.Label6)
         Me.MetroPanel1.Controls.Add(Me.Label4)
@@ -168,6 +173,33 @@ Partial Class Form1
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1000
         '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label8.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label8.Location = New System.Drawing.Point(22, 276)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(405, 38)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Your Internet Connection is being monitored and will be " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "restored whenever requi" &
+    "red."
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label9.Location = New System.Drawing.Point(83, 87)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(165, 19)
+        Me.Label9.TabIndex = 11
+        Me.Label9.Text = "Response Time : NaAN"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,4 +235,7 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Label7 As Label
+    Friend WithEvents Timer3 As Timer
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class

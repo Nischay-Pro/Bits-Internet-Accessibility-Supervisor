@@ -28,6 +28,7 @@ Partial Class loadman
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -50,6 +51,10 @@ Partial Class loadman
         '
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "Bits Internet Accessibility Supervisor"
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
         '
         'loadman
         '
@@ -77,4 +82,5 @@ Partial Class loadman
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents Timer2 As Timer
 End Class

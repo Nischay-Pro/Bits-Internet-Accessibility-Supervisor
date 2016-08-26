@@ -1,4 +1,6 @@
-﻿Public Class login
+﻿Imports System.Net
+
+Public Class login
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Timer1.Start()
         If MetroTextBox1.Text <> Nothing And MetroTextBox2.Text <> Nothing Then

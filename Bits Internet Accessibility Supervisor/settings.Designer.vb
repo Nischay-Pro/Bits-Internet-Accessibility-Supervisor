@@ -33,6 +33,7 @@ Partial Class settings
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroCheckBox3 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox2 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
@@ -42,7 +43,6 @@ Partial Class settings
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroCheckBox3 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -57,7 +57,7 @@ Partial Class settings
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(23, 63)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(436, 354)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -191,6 +191,16 @@ Partial Class settings
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.VerticalScrollbarSize = 10
         '
+        'MetroCheckBox3
+        '
+        Me.MetroCheckBox3.AutoSize = True
+        Me.MetroCheckBox3.Location = New System.Drawing.Point(19, 100)
+        Me.MetroCheckBox3.Name = "MetroCheckBox3"
+        Me.MetroCheckBox3.Size = New System.Drawing.Size(224, 15)
+        Me.MetroCheckBox3.TabIndex = 4
+        Me.MetroCheckBox3.Text = "Enable Automatic Network Speed Test"
+        Me.MetroCheckBox3.UseSelectable = True
+        '
         'MetroCheckBox2
         '
         Me.MetroCheckBox2.AutoSize = True
@@ -294,16 +304,6 @@ Partial Class settings
         Me.MetroButton2.TabIndex = 6
         Me.MetroButton2.Text = "Close"
         Me.MetroButton2.UseSelectable = True
-        '
-        'MetroCheckBox3
-        '
-        Me.MetroCheckBox3.AutoSize = True
-        Me.MetroCheckBox3.Location = New System.Drawing.Point(19, 100)
-        Me.MetroCheckBox3.Name = "MetroCheckBox3"
-        Me.MetroCheckBox3.Size = New System.Drawing.Size(224, 15)
-        Me.MetroCheckBox3.TabIndex = 4
-        Me.MetroCheckBox3.Text = "Enable Automatic Network Speed Test"
-        Me.MetroCheckBox3.UseSelectable = True
         '
         'settings
         '
