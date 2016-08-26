@@ -126,4 +126,9 @@ ad:
         Process.Start(Application.ExecutablePath)
         End
     End Sub
+
+    Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
+        Me.ShowInTaskbar = True
+        Me.Show()
+    End Sub
 End Class

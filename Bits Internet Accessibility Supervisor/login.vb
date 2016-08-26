@@ -6,12 +6,14 @@
                 ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
                 ini.AddSection("Authentication")
                 ini.SetKeyValue("Authentication", "Username", MetroTextBox1.Text)
+                'ini.SetKeyValue("Authentication", "Password", EncryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), MetroTextBox2.Text))
                 ini.SetKeyValue("Authentication", "Password", MetroTextBox2.Text)
                 ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
                 CheckLogin()
             Else
                 ini.AddSection("Authentication")
                 ini.SetKeyValue("Authentication", "Username", MetroTextBox1.Text)
+                'ini.SetKeyValue("Authentication", "Password", EncryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), MetroTextBox2.Text))
                 ini.SetKeyValue("Authentication", "Password", MetroTextBox2.Text)
                 ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
                 CheckLogin()
@@ -23,6 +25,8 @@
     End Sub
     Private WithEvents browser As WebBrowser
     Private Sub CheckLogin()
+        MetroTextBox2.Enabled = False
+        MetroTextBox1.Enabled = False
         PictureBox2.Enabled = False
         browser = New WebBrowser
         browser.ScriptErrorsSuppressed = True
@@ -57,6 +61,8 @@ def:
             GoTo def
         End If
         PictureBox2.Enabled = True
+        MetroTextBox2.Enabled = True
+        MetroTextBox1.Enabled = True
     End Sub
     Private Sub wait(ByVal interval As Integer)
         Dim sw As New Stopwatch

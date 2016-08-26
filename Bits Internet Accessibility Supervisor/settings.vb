@@ -164,6 +164,7 @@ Public Class settings
 
     Private Sub MetroCheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles MetroCheckBox2.CheckedChanged
         If MetroCheckBox2.Checked = True Then
+            RegKeyDelete()
             RegKeyAdd(True)
         Else
             RegKeyDelete()

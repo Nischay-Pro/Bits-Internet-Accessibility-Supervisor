@@ -52,7 +52,13 @@ Public Class loadman
         If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\config.ini") Then
             ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
             username = ini.GetKeyValue("Authentication", "Username")
-            password = ini.GetKeyValue("Authentication", "Password")
+            Try
+                'password = DecryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), ini.GetKeyValue("Authentication", "Password"))
+                password = ini.GetKeyValue("Authentication", "Password")
+            Catch ex As Exception
+                openlogin = True
+                Exit Sub
+            End Try
         Else
             openlogin = True
             Exit Sub
@@ -120,6 +126,7 @@ def:
             objWebReq = Nothing
             Return True
         Catch ex As Exception
+            objResp = Nothing
             objResp.Close()
             objWebReq = Nothing
             Return False
@@ -130,6 +137,13 @@ def:
         NotifyIcon1.Visible = False
         Dim newman As New Form1
         newman.Show()
-        Me.Close()
+        Close()
+    End Sub
+
+    Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
+        NotifyIcon1.Visible = False
+        Dim newman As New Form1
+        newman.Show()
+        Close()
     End Sub
 End Class
