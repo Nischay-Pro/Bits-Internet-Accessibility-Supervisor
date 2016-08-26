@@ -7,19 +7,30 @@ Public Class Form1
         Dim ini As New IniFile
         ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
         Dim welcomeme As String = Nothing
+
         If ini.GetKeyValue("Authentication", "Username") = "f2015606" Then
             welcomeme = "My Lord"
         Else
             welcomeme = ini.GetKeyValue("Authentication", "Username")
         End If
+        ini.SetKeyValue("Settings", "Version", My.Application.Info.Version.ToString)
+        ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         Label1.Text = "Welcome " & welcomeme
         LoadSettings(True)
         Dim speedrunner As New Threading.Thread(Sub() RunNetworkSpeed(True))
         speedrunner.IsBackground = True
         speedrunner.SetApartmentState(Threading.ApartmentState.STA)
         speedrunner.Start()
+        Dim checkupdates As New Threading.Thread(AddressOf UpdateCheck)
+        checkupdates.IsBackground = True
+        checkupdates.SetApartmentState(Threading.ApartmentState.STA)
+        checkupdates.Start()
     End Sub
     Dim time As Integer
+
+    Private Sub UpdateCheck()
+
+    End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         time += 1
         Timer1.Interval = 1000

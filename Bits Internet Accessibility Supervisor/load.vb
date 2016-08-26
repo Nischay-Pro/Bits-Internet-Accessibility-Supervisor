@@ -100,6 +100,7 @@ def:
         End If
     End Sub
     Private Sub loadman_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\version.txt", My.Application.Info.Version.ToString, False)
         Dim threada As New Threading.Thread(AddressOf Check)
         threada.SetApartmentState(Threading.ApartmentState.STA)
         threada.IsBackground = True

@@ -1,5 +1,6 @@
 ﻿Public Class login
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Timer1.Start()
         If MetroTextBox1.Text <> Nothing And MetroTextBox2.Text <> Nothing Then
             Dim ini As New IniFile
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\config.ini") Then
@@ -60,6 +61,7 @@ def:
         Else
             GoTo def
         End If
+        Timer1.Stop()
         PictureBox2.Enabled = True
         MetroTextBox2.Enabled = True
         MetroTextBox1.Enabled = True
@@ -74,6 +76,11 @@ def:
     End Sub
 
     Private Sub login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        End
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Process.Start(Application.ExecutablePath)
         End
     End Sub
 End Class

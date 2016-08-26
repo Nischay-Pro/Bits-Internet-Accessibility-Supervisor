@@ -22,6 +22,8 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -29,6 +31,7 @@ Partial Class login
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -151,17 +154,22 @@ Partial Class login
         Me.MetroLink1.Text = "Username :"
         Me.MetroLink1.UseSelectable = True
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 15000
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(439, 405)
         Me.Controls.Add(Me.MetroPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "login"
         Me.Resizable = False
-        Me.Text = "Connect to Cyberroam"
+        Me.Text = "Connect to Cyberoam"
         Me.MetroPanel1.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -176,4 +184,5 @@ Partial Class login
     Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Timer1 As Timer
 End Class
