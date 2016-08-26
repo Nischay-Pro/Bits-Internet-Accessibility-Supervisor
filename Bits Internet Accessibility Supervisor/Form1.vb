@@ -29,7 +29,17 @@ Public Class Form1
     Dim time As Integer
 
     Private Sub UpdateCheck()
-
+        Dim webman As New WebClient
+        Dim stringman As String = webman.DownloadString("https://raw.githubusercontent.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/master/Bits%20Internet%20Accessibility%20Supervisor/bin/Release/version.txt")
+        stringman = stringman.Substring(0, My.Application.Info.Version.ToString.Length)
+        If stringman = My.Application.Info.Version.ToString Then
+            SetLabelText("No updates are available.", Label5)
+        Else
+            If MessageBox.Show("A newer update is available. Would you like to download?", "Newer Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
+            End If
+            SetLabelText("Newer update is available.", Label5)
+            End If
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         time += 1
@@ -141,5 +151,11 @@ ad:
     Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
         Me.ShowInTaskbar = True
         Me.Show()
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        If Label5.Text = "Newer update is available." Then
+            Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
+        End If
     End Sub
 End Class

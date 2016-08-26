@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -37,7 +38,6 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +86,17 @@ Partial Class Form1
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label7.Location = New System.Drawing.Point(369, 7)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(80, 19)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Reconnect"
         '
         'Label6
         '
@@ -156,17 +167,6 @@ Partial Class Form1
         '
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1000
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.Label7.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label7.Location = New System.Drawing.Point(369, 7)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 19)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Reconnect"
         '
         'Form1
         '
