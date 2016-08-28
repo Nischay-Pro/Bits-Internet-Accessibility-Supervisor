@@ -1,17 +1,15 @@
-C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.exe.config
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.exe
-C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.pdb
-C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.xml
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\MetroFramework.dll
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.exe.config
+C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits Internet Accessibility Supervisor.vbprojResolveAssemblyReference.cache
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.Form1.resources
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.loadman.resources
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.login.resources
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.Resources.resources
+C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.notification.resources
+C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.settings.resources
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits Internet Accessibility Supervisor.vbproj.GenerateResource.Cache
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits Internet Accessibility Supervisor.exe
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits Internet Accessibility Supervisor.xml
 C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits Internet Accessibility Supervisor.pdb
-C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits Internet Accessibility Supervisor.vbprojResolveAssemblyReference.cache
-C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.settings.resources
-C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\obj\Debug\Bits_Internet_Accessibility_Supervisor.notification.resources
