@@ -1,0 +1,65 @@
+﻿[28-08-2016 02:49:41 PM]Loading Configurations
+[28-08-2016 02:49:41 PM]Finished Loading Configurations
+[28-08-2016 02:49:42 PM]Response Time : 2402
+[28-08-2016 02:49:42 PM]Loading Configurations
+[28-08-2016 02:49:42 PM]Finished Loading Configurations
+[28-08-2016 02:49:44 PM]Threshold set to 0
+[28-08-2016 02:49:47 PM]Checking Network Access
+[28-08-2016 02:49:47 PM]Response Time : 316
+[28-08-2016 02:49:50 PM]Threshold set to 0
+[28-08-2016 02:49:52 PM]Checking Network Access
+[28-08-2016 02:49:54 PM]Response Time : 1622
+[28-08-2016 02:49:59 PM]Threshold set to 0
+[28-08-2016 02:49:59 PM]Good Bye. User Closed App
+[28-08-2016 02:54:59 PM]Started Application
+[28-08-2016 02:54:59 PM]Parameters Loaded
+[28-08-2016 02:54:59 PM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Release\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 02:54:59 PM]Logging in
+[28-08-2016 02:55:01 PM]Logged in
+[28-08-2016 02:55:01 PM]Checking Updates
+[28-08-2016 02:55:01 PM]Checked for updates
+[28-08-2016 02:55:02 PM]Normal Mode GUI Load Up
+[28-08-2016 02:55:02 PM]Normal GUI Mode Loaded
+[28-08-2016 02:55:02 PM]Loading Configuration
+[28-08-2016 02:55:02 PM]Reset Version
+[28-08-2016 02:55:02 PM]Loading Configurations
+[28-08-2016 02:55:02 PM]Finished Loading Configurations
+[28-08-2016 02:55:02 PM]Running Network Speed Test Thread
+[28-08-2016 02:55:02 PM]Running Check Updates Thread
+[28-08-2016 02:55:02 PM]Started Network Speed Test
+[28-08-2016 02:55:03 PM]Running Network Access Monitor Thread
+[28-08-2016 02:55:03 PM]Checking Updates
+[28-08-2016 02:55:03 PM]Checking Network Access
+[28-08-2016 02:55:03 PM]Stopped. Network Speed Test. Configuration Denied Access
+[28-08-2016 02:55:03 PM]Response Time : 465
+[28-08-2016 02:55:03 PM]Threshold set to 0
+[28-08-2016 02:55:04 PM]New Updates
+[28-08-2016 02:55:06 PM]Checking Network Access
+[28-08-2016 02:55:06 PM]Finished Checking Updates
+[28-08-2016 02:55:06 PM]Response Time : 243
+[28-08-2016 02:55:06 PM]Threshold set to 0
+[28-08-2016 02:55:09 PM]Checking Network Access
+[28-08-2016 02:55:09 PM]Response Time : 427
+[28-08-2016 02:55:09 PM]Threshold set to 0
+[28-08-2016 02:55:12 PM]Checking Network Access
+[28-08-2016 02:55:12 PM]Response Time : 356
+[28-08-2016 02:55:12 PM]Threshold set to 0
+[28-08-2016 02:55:14 PM]Checking Network Access
+[28-08-2016 02:55:15 PM]Response Time : 402
+[28-08-2016 02:55:15 PM]Threshold set to 0
+[28-08-2016 02:55:17 PM]Checking Network Access
+[28-08-2016 02:55:18 PM]Response Time : 476
+[28-08-2016 02:55:18 PM]Threshold set to 0
+[28-08-2016 02:55:21 PM]Checking Network Access
+[28-08-2016 02:55:21 PM]Response Time : 431
+[28-08-2016 02:55:21 PM]Threshold set to 0
+[28-08-2016 02:55:24 PM]Checking Network Access
+[28-08-2016 02:55:24 PM]Response Time : 878
+[28-08-2016 02:55:24 PM]Threshold set to 0
+[28-08-2016 02:55:27 PM]Checking Network Access
+[28-08-2016 02:55:27 PM]Response Time : 190
+[28-08-2016 02:55:27 PM]Threshold set to 0
+[28-08-2016 02:55:30 PM]Checking Network Access
+[28-08-2016 02:55:30 PM]Response Time : 208
+[28-08-2016 02:55:30 PM]Threshold set to 0
+[28-08-2016 02:55:32 PM]Good Bye. User Closed App

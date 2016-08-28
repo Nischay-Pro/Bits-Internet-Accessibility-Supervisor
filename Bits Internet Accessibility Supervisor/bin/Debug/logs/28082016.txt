@@ -1,0 +1,521 @@
+﻿[28-08-2016 03:17:06 AM]Started Application
+[28-08-2016 03:17:06 AM]Parameters Loaded
+[28-08-2016 03:17:06 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:17:06 AM]Logging in
+[28-08-2016 03:17:08 AM]Logged in
+[28-08-2016 03:17:09 AM]Checking Updates
+[28-08-2016 03:17:09 AM]Checked for updates
+[28-08-2016 03:17:09 AM]Normal Mode GUI Load Up
+[28-08-2016 03:17:10 AM]Normal GUI Mode Loaded
+[28-08-2016 03:17:10 AM]Loading Configuration
+[28-08-2016 03:17:10 AM]Greetings My Lord
+[28-08-2016 03:17:10 AM]Reset Version
+[28-08-2016 03:17:10 AM]Loading Configurations
+[28-08-2016 03:17:11 AM]Finished Loading Configurations
+[28-08-2016 03:17:11 AM]Running Network Speed Test Thread
+[28-08-2016 03:17:11 AM]Running Check Updates Thread
+[28-08-2016 03:17:11 AM]Started Network Speed Test
+[28-08-2016 03:17:11 AM]Running Network Access Monitor Thread
+[28-08-2016 03:17:11 AM]Checking Updates
+[28-08-2016 03:17:11 AM]Stopped. Configuration Denied Access
+[28-08-2016 03:17:11 AM]Checking Network Access
+[28-08-2016 03:17:13 AM]New Updates
+[28-08-2016 03:17:15 AM]Response Time : 3072
+[28-08-2016 03:17:15 AM]Threshold set to 0
+[28-08-2016 03:17:18 AM]Checking Network Access
+[28-08-2016 03:17:19 AM]Response Time : 855
+[28-08-2016 03:17:19 AM]Threshold set to 0
+[28-08-2016 03:17:21 AM]Checking Network Access
+[28-08-2016 03:17:22 AM]Response Time : 488
+[28-08-2016 03:17:22 AM]Threshold set to 0
+[28-08-2016 03:17:22 AM]Finished Checking Updates
+[28-08-2016 03:17:24 AM]Checking Network Access
+[28-08-2016 03:17:25 AM]Response Time : 566
+[28-08-2016 03:17:25 AM]Threshold set to 0
+[28-08-2016 03:17:27 AM]Checking Network Access
+[28-08-2016 03:17:28 AM]Response Time : 812
+[28-08-2016 03:17:28 AM]Threshold set to 0
+[28-08-2016 03:17:31 AM]Checking Network Access
+[28-08-2016 03:17:32 AM]Response Time : 565
+[28-08-2016 03:17:32 AM]Threshold set to 0
+[28-08-2016 03:17:34 AM]Checking Network Access
+[28-08-2016 03:17:35 AM]Response Time : 418
+[28-08-2016 03:17:35 AM]Threshold set to 0
+[28-08-2016 03:17:37 AM]Checking Network Access
+[28-08-2016 03:17:38 AM]Response Time : 428
+[28-08-2016 03:17:38 AM]Threshold set to 0
+[28-08-2016 03:17:40 AM]Checking Network Access
+[28-08-2016 03:17:41 AM]Response Time : 439
+[28-08-2016 03:17:41 AM]Threshold set to 0
+[28-08-2016 03:17:43 AM]Checking Network Access
+[28-08-2016 03:17:44 AM]Response Time : 455
+[28-08-2016 03:17:44 AM]Threshold set to 0
+[28-08-2016 03:17:46 AM]Checking Network Access
+[28-08-2016 03:17:47 AM]Response Time : 506
+[28-08-2016 03:17:47 AM]Threshold set to 0
+[28-08-2016 03:17:49 AM]Checking Network Access
+[28-08-2016 03:17:50 AM]Response Time : 423
+[28-08-2016 03:17:50 AM]Threshold set to 0
+[28-08-2016 03:17:53 AM]Checking Network Access
+[28-08-2016 03:17:53 AM]Response Time : 384
+[28-08-2016 03:17:53 AM]Threshold set to 0
+[28-08-2016 03:17:56 AM]Checking Network Access
+[28-08-2016 03:17:56 AM]Response Time : 487
+[28-08-2016 03:17:56 AM]Threshold set to 0
+[28-08-2016 03:17:59 AM]Checking Network Access
+[28-08-2016 03:17:59 AM]Response Time : 429
+[28-08-2016 03:17:59 AM]Threshold set to 0
+[28-08-2016 03:18:02 AM]Checking Network Access
+[28-08-2016 03:18:02 AM]Response Time : 503
+[28-08-2016 03:18:02 AM]Threshold set to 0
+[28-08-2016 03:18:05 AM]Checking Network Access
+[28-08-2016 03:18:05 AM]Response Time : 422
+[28-08-2016 03:18:05 AM]Threshold set to 0
+[28-08-2016 03:18:08 AM]Checking Network Access
+[28-08-2016 03:18:09 AM]Response Time : 488
+[28-08-2016 03:18:09 AM]Threshold set to 0
+[28-08-2016 03:18:11 AM]Checking Network Access
+[28-08-2016 03:18:12 AM]Response Time : 381
+[28-08-2016 03:18:12 AM]Threshold set to 0
+[28-08-2016 03:18:15 AM]Checking Network Access
+[28-08-2016 03:18:17 AM]Response Time : 1678
+[28-08-2016 03:18:17 AM]Threshold set to 0
+[28-08-2016 03:18:20 AM]Checking Network Access
+[28-08-2016 03:18:21 AM]Response Time : 838
+[28-08-2016 03:18:21 AM]Threshold set to 0
+[28-08-2016 03:18:24 AM]Checking Network Access
+[28-08-2016 03:18:24 AM]Response Time : 377
+[28-08-2016 03:18:24 AM]Threshold set to 0
+[28-08-2016 03:18:27 AM]Checking Network Access
+[28-08-2016 03:18:27 AM]Response Time : 387
+[28-08-2016 03:18:27 AM]Threshold set to 0
+[28-08-2016 03:18:30 AM]Checking Network Access
+[28-08-2016 03:18:30 AM]Response Time : 457
+[28-08-2016 03:18:30 AM]Threshold set to 0
+[28-08-2016 03:18:33 AM]Checking Network Access
+[28-08-2016 03:18:33 AM]Response Time : 409
+[28-08-2016 03:18:33 AM]Threshold set to 0
+[28-08-2016 03:18:36 AM]Checking Network Access
+[28-08-2016 03:18:37 AM]Response Time : 586
+[28-08-2016 03:18:37 AM]Threshold set to 0
+[28-08-2016 03:18:39 AM]Checking Network Access
+[28-08-2016 03:18:41 AM]Response Time : 1314
+[28-08-2016 03:18:41 AM]Threshold set to 0
+[28-08-2016 03:18:43 AM]Checking Network Access
+[28-08-2016 03:18:45 AM]Response Time : 1477
+[28-08-2016 03:18:45 AM]Threshold set to 0
+[28-08-2016 03:18:47 AM]Checking Network Access
+[28-08-2016 03:18:48 AM]Response Time : 715
+[28-08-2016 03:18:48 AM]Threshold set to 0
+[28-08-2016 03:18:51 AM]Checking Network Access
+[28-08-2016 03:18:51 AM]Response Time : 399
+[28-08-2016 03:18:51 AM]Threshold set to 0
+[28-08-2016 03:18:54 AM]Checking Network Access
+[28-08-2016 03:18:54 AM]Response Time : 423
+[28-08-2016 03:18:54 AM]Threshold set to 0
+[28-08-2016 03:18:57 AM]Checking Network Access
+[28-08-2016 03:18:57 AM]Response Time : 447
+[28-08-2016 03:18:57 AM]Threshold set to 0
+[28-08-2016 03:19:00 AM]Checking Network Access
+[28-08-2016 03:19:00 AM]Response Time : 462
+[28-08-2016 03:19:00 AM]Threshold set to 0
+[28-08-2016 03:19:03 AM]Checking Network Access
+[28-08-2016 03:19:03 AM]Response Time : 484
+[28-08-2016 03:19:03 AM]Threshold set to 0
+[28-08-2016 03:19:06 AM]Checking Network Access
+[28-08-2016 03:19:06 AM]Response Time : 482
+[28-08-2016 03:19:06 AM]Threshold set to 0
+[28-08-2016 03:19:09 AM]Checking Network Access
+[28-08-2016 03:19:10 AM]Response Time : 732
+[28-08-2016 03:19:10 AM]Threshold set to 0
+[28-08-2016 03:19:12 AM]Checking Network Access
+[28-08-2016 03:19:14 AM]Response Time : 1294
+[28-08-2016 03:19:14 AM]Threshold set to 0
+[28-08-2016 03:19:16 AM]Checking Network Access
+[28-08-2016 03:19:31 AM]Response Time : 2161
+[28-08-2016 03:19:31 AM]Threshold set to 0
+[28-08-2016 03:19:33 AM]Checking Network Access
+[28-08-2016 03:19:42 AM]The operation has timed out
+[28-08-2016 03:19:42 AM]Checking Network Access
+[28-08-2016 03:19:42 AM]Threshold Set to 1
+[28-08-2016 03:19:43 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:19:43 AM]Threshold Set to 2
+[28-08-2016 03:19:43 AM]Checking Network Access
+[28-08-2016 03:19:43 AM]Threshold Set to 3
+[28-08-2016 03:19:43 AM]Threshold Set to 4
+[28-08-2016 03:19:43 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:19:43 AM]Threshold Set to 5
+[28-08-2016 03:19:43 AM]Threshold Limit Reached. Restoring Network
+[28-08-2016 03:19:48 AM]Started Application
+[28-08-2016 03:19:49 AM]Parameters Loaded
+[28-08-2016 03:19:49 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" -hidden -lostnet
+[28-08-2016 03:19:49 AM]Logging in
+[28-08-2016 03:20:10 AM]Started Application
+[28-08-2016 03:20:10 AM]Parameters Loaded
+[28-08-2016 03:20:10 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:20:10 AM]Logging in
+[28-08-2016 03:20:33 AM]Started Application
+[28-08-2016 03:20:33 AM]Parameters Loaded
+[28-08-2016 03:20:33 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:20:33 AM]Logging in
+[28-08-2016 03:20:55 AM]Started Application
+[28-08-2016 03:20:55 AM]Parameters Loaded
+[28-08-2016 03:20:55 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:20:55 AM]Logging in
+[28-08-2016 03:21:17 AM]Started Application
+[28-08-2016 03:21:17 AM]Parameters Loaded
+[28-08-2016 03:21:17 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:21:17 AM]Logging in
+[28-08-2016 03:21:41 AM]Started Application
+[28-08-2016 03:21:41 AM]Parameters Loaded
+[28-08-2016 03:21:41 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:21:41 AM]Logging in
+[28-08-2016 03:22:04 AM]Started Application
+[28-08-2016 03:22:04 AM]Parameters Loaded
+[28-08-2016 03:22:04 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:22:04 AM]Logging in
+[28-08-2016 03:22:26 AM]Started Application
+[28-08-2016 03:22:26 AM]Parameters Loaded
+[28-08-2016 03:22:26 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:22:26 AM]Logging in
+[28-08-2016 03:24:16 AM]Started Application
+[28-08-2016 03:24:16 AM]Parameters Loaded
+[28-08-2016 03:24:16 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:24:16 AM]Logging in
+[28-08-2016 03:24:17 AM]Cannot Connect to Cyberoam
+[28-08-2016 03:28:54 AM]Started Application
+[28-08-2016 03:28:54 AM]Parameters Loaded
+[28-08-2016 03:28:54 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:28:54 AM]Logging in
+[28-08-2016 03:28:56 AM]Logged in
+[28-08-2016 03:28:56 AM]Checking Updates
+[28-08-2016 03:28:56 AM]Checked for updates
+[28-08-2016 03:28:57 AM]Normal Mode GUI Load Up
+[28-08-2016 03:28:57 AM]Normal GUI Mode Loaded
+[28-08-2016 03:28:57 AM]Loading Configuration
+[28-08-2016 03:28:57 AM]Greetings My Lord
+[28-08-2016 03:28:57 AM]Reset Version
+[28-08-2016 03:28:57 AM]Loading Configurations
+[28-08-2016 03:28:58 AM]Finished Loading Configurations
+[28-08-2016 03:28:58 AM]Running Network Speed Test Thread
+[28-08-2016 03:28:58 AM]Running Check Updates Thread
+[28-08-2016 03:28:58 AM]Started Network Speed Test
+[28-08-2016 03:28:58 AM]Running Network Access Monitor Thread
+[28-08-2016 03:28:59 AM]Checking Updates
+[28-08-2016 03:28:59 AM]Checking Network Access
+[28-08-2016 03:28:59 AM]Stopped. Configuration Denied Access
+[28-08-2016 03:28:59 AM]Response Time : 469
+[28-08-2016 03:28:59 AM]Threshold set to 0
+[28-08-2016 03:29:00 AM]New Updates
+[28-08-2016 03:29:02 AM]Checking Network Access
+[28-08-2016 03:29:02 AM]Response Time : 211
+[28-08-2016 03:29:02 AM]Threshold set to 0
+[28-08-2016 03:29:03 AM]Finished Checking Updates
+[28-08-2016 03:29:05 AM]Checking Network Access
+[28-08-2016 03:29:05 AM]Response Time : 240
+[28-08-2016 03:29:05 AM]Threshold set to 0
+[28-08-2016 03:29:08 AM]Checking Network Access
+[28-08-2016 03:29:08 AM]Response Time : 228
+[28-08-2016 03:29:08 AM]Threshold set to 0
+[28-08-2016 03:29:10 AM]Checking Network Access
+[28-08-2016 03:29:11 AM]Response Time : 296
+[28-08-2016 03:29:11 AM]Threshold set to 0
+[28-08-2016 03:29:14 AM]Checking Network Access
+[28-08-2016 03:29:21 AM]The operation has timed out
+[28-08-2016 03:29:21 AM]Checking Network Access
+[28-08-2016 03:29:21 AM]Threshold Set to 1
+[28-08-2016 03:29:22 AM]Threshold Set to 2
+[28-08-2016 03:29:22 AM]Unable to connect to the remote server
+[28-08-2016 03:29:22 AM]Threshold Set to 3
+[28-08-2016 03:29:22 AM]Checking Network Access
+[28-08-2016 03:29:22 AM]Threshold Set to 4
+[28-08-2016 03:29:22 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:29:22 AM]Checking Network Access
+[28-08-2016 03:29:22 AM]Threshold Set to 5
+[28-08-2016 03:29:22 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:29:22 AM]Threshold Limit Reached. Restoring Network
+[28-08-2016 03:29:22 AM]Checking Network Access
+[28-08-2016 03:29:22 AM]Started Application
+[28-08-2016 03:29:23 AM]Parameters Loaded
+[28-08-2016 03:29:23 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" -hidden -lostnet
+[28-08-2016 03:29:23 AM]Logging in
+[28-08-2016 03:29:23 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:29:23 AM]See you in 900000milliseconds
+[28-08-2016 03:29:44 AM]Started Application
+[28-08-2016 03:29:45 AM]Parameters Loaded
+[28-08-2016 03:29:45 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:29:45 AM]Logging in
+[28-08-2016 03:29:45 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:29:45 AM]See you in 900000milliseconds
+[28-08-2016 03:30:07 AM]Started Application
+[28-08-2016 03:30:07 AM]Parameters Loaded
+[28-08-2016 03:30:07 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:30:07 AM]Logging in
+[28-08-2016 03:30:07 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:30:07 AM]See you in 900000milliseconds
+[28-08-2016 03:31:40 AM]Started Application
+[28-08-2016 03:31:40 AM]Parameters Loaded
+[28-08-2016 03:31:40 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:31:40 AM]Logging in
+[28-08-2016 03:31:41 AM]Cannot Connect to Cyberoam
+[28-08-2016 03:31:52 AM]Started Application
+[28-08-2016 03:31:52 AM]Parameters Loaded
+[28-08-2016 03:31:52 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:31:53 AM]Logging in
+[28-08-2016 03:31:55 AM]Logged in
+[28-08-2016 03:31:55 AM]Checking Updates
+[28-08-2016 03:31:55 AM]Checked for updates
+[28-08-2016 03:31:55 AM]Normal Mode GUI Load Up
+[28-08-2016 03:31:55 AM]Normal GUI Mode Loaded
+[28-08-2016 03:31:55 AM]Loading Configuration
+[28-08-2016 03:31:55 AM]Greetings My Lord
+[28-08-2016 03:31:55 AM]Reset Version
+[28-08-2016 03:31:55 AM]Loading Configurations
+[28-08-2016 03:31:55 AM]Finished Loading Configurations
+[28-08-2016 03:31:56 AM]Running Network Speed Test Thread
+[28-08-2016 03:31:56 AM]Running Check Updates Thread
+[28-08-2016 03:31:56 AM]Started Network Speed Test
+[28-08-2016 03:31:56 AM]Checking Updates
+[28-08-2016 03:31:56 AM]Running Network Access Monitor Thread
+[28-08-2016 03:31:56 AM]Stopped. Configuration Denied Access
+[28-08-2016 03:31:56 AM]Checking Network Access
+[28-08-2016 03:31:56 AM]Response Time : 325
+[28-08-2016 03:31:57 AM]New Updates
+[28-08-2016 03:31:57 AM]Threshold set to 0
+[28-08-2016 03:31:59 AM]Finished Checking Updates
+[28-08-2016 03:31:59 AM]Checking Network Access
+[28-08-2016 03:31:59 AM]Response Time : 192
+[28-08-2016 03:31:59 AM]Threshold set to 0
+[28-08-2016 03:32:02 AM]Checking Network Access
+[28-08-2016 03:32:02 AM]Response Time : 187
+[28-08-2016 03:32:02 AM]Threshold set to 0
+[28-08-2016 03:32:05 AM]Checking Network Access
+[28-08-2016 03:32:05 AM]Response Time : 196
+[28-08-2016 03:32:05 AM]Threshold set to 0
+[28-08-2016 03:32:08 AM]Checking Network Access
+[28-08-2016 03:32:08 AM]Response Time : 191
+[28-08-2016 03:32:08 AM]Threshold set to 0
+[28-08-2016 03:32:10 AM]Checking Network Access
+[28-08-2016 03:32:18 AM]The request was aborted: The operation has timed out.
+[28-08-2016 03:32:18 AM]Checking Network Access
+[28-08-2016 03:32:18 AM]Threshold Set to 1
+[28-08-2016 03:32:18 AM]Threshold Set to 2
+[28-08-2016 03:32:18 AM]Unable to connect to the remote server
+[28-08-2016 03:32:18 AM]Threshold Set to 3
+[28-08-2016 03:32:18 AM]Checking Network Access
+[28-08-2016 03:32:18 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:32:18 AM]Checking Network Access
+[28-08-2016 03:32:18 AM]Threshold Set to 4
+[28-08-2016 03:32:18 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:32:18 AM]Checking Network Access
+[28-08-2016 03:32:18 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:32:18 AM]Threshold Set to 5
+[28-08-2016 03:32:18 AM]Checking Network Access
+[28-08-2016 03:32:18 AM]Threshold Limit Reached. Restoring Network
+[28-08-2016 03:32:18 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:32:18 AM]Checking Network Access
+[28-08-2016 03:32:19 AM]Started Application
+[28-08-2016 03:32:19 AM]Parameters Loaded
+[28-08-2016 03:32:19 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" -hidden -lostnet
+[28-08-2016 03:32:19 AM]Logging in
+[28-08-2016 03:32:19 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:32:19 AM]See you in 900000 milliseconds
+[28-08-2016 03:32:41 AM]Started Application
+[28-08-2016 03:32:41 AM]Parameters Loaded
+[28-08-2016 03:32:41 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:32:41 AM]Logging in
+[28-08-2016 03:32:41 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:32:41 AM]See you in 900000 milliseconds
+[28-08-2016 03:33:03 AM]Started Application
+[28-08-2016 03:33:03 AM]Parameters Loaded
+[28-08-2016 03:33:03 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:33:03 AM]Logging in
+[28-08-2016 03:33:03 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:33:03 AM]See you in 900000 milliseconds
+[28-08-2016 03:35:14 AM]Started Application
+[28-08-2016 03:35:14 AM]Parameters Loaded
+[28-08-2016 03:35:14 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:35:14 AM]Logging in
+[28-08-2016 03:35:16 AM]Logged in
+[28-08-2016 03:35:16 AM]Checking Updates
+[28-08-2016 03:35:16 AM]Checked for updates
+[28-08-2016 03:35:17 AM]Normal Mode GUI Load Up
+[28-08-2016 03:35:17 AM]Normal GUI Mode Loaded
+[28-08-2016 03:35:17 AM]Loading Configuration
+[28-08-2016 03:35:17 AM]Greetings My Lord
+[28-08-2016 03:35:17 AM]Reset Version
+[28-08-2016 03:35:17 AM]Loading Configurations
+[28-08-2016 03:35:17 AM]Finished Loading Configurations
+[28-08-2016 03:35:17 AM]Running Network Speed Test Thread
+[28-08-2016 03:35:17 AM]Running Check Updates Thread
+[28-08-2016 03:35:17 AM]Started Network Speed Test
+[28-08-2016 03:35:18 AM]Running Network Access Monitor Thread
+[28-08-2016 03:35:18 AM]Checking Updates
+[28-08-2016 03:35:18 AM]Stopped. Configuration Denied Access
+[28-08-2016 03:35:18 AM]Checking Network Access
+[28-08-2016 03:35:18 AM]Response Time : 399
+[28-08-2016 03:35:18 AM]Threshold set to 0
+[28-08-2016 03:35:19 AM]New Updates
+[28-08-2016 03:35:20 AM]Finished Checking Updates
+[28-08-2016 03:35:21 AM]Checking Network Access
+[28-08-2016 03:35:21 AM]Response Time : 213
+[28-08-2016 03:35:21 AM]Threshold set to 0
+[28-08-2016 03:35:24 AM]Checking Network Access
+[28-08-2016 03:35:24 AM]Response Time : 198
+[28-08-2016 03:35:24 AM]Threshold set to 0
+[28-08-2016 03:35:27 AM]Checking Network Access
+[28-08-2016 03:35:34 AM]The operation has timed out
+[28-08-2016 03:35:34 AM]Checking Network Access
+[28-08-2016 03:35:34 AM]Threshold Set to 1
+[28-08-2016 03:35:34 AM]Unable to connect to the remote server
+[28-08-2016 03:35:34 AM]Checking Network Access
+[28-08-2016 03:35:34 AM]Threshold Set to 2
+[28-08-2016 03:35:34 AM]Threshold Set to 3
+[28-08-2016 03:35:34 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:35:34 AM]Threshold Set to 4
+[28-08-2016 03:35:34 AM]Checking Network Access
+[28-08-2016 03:35:34 AM]Threshold Set to 5
+[28-08-2016 03:35:35 AM]Threshold Limit Reached. Restoring Network
+[28-08-2016 03:35:35 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:35:35 AM]Checking Network Access
+[28-08-2016 03:35:35 AM]Started Application
+[28-08-2016 03:35:35 AM]Parameters Loaded
+[28-08-2016 03:35:35 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" -hidden -lostnet
+[28-08-2016 03:35:35 AM]Logging in
+[28-08-2016 03:35:36 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:35:36 AM]See you in 900000 milliseconds
+[28-08-2016 03:35:57 AM]Started Application
+[28-08-2016 03:35:57 AM]Parameters Loaded
+[28-08-2016 03:35:57 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" "-hidden" "-lostnet"
+[28-08-2016 03:35:57 AM]Logging in
+[28-08-2016 03:35:58 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:35:58 AM]See you in 900000 milliseconds
+[28-08-2016 03:36:22 AM]Started Application
+[28-08-2016 03:36:22 AM]Parameters Loaded
+[28-08-2016 03:36:22 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:36:23 AM]Logging in
+[28-08-2016 03:36:24 AM]Cannot Connect to Cyberoam
+[28-08-2016 03:36:30 AM]Started Application
+[28-08-2016 03:36:30 AM]Parameters Loaded
+[28-08-2016 03:36:30 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.vshost.exe" 
+[28-08-2016 03:36:30 AM]Logging in
+[28-08-2016 03:36:32 AM]Logged in
+[28-08-2016 03:36:32 AM]Checking Updates
+[28-08-2016 03:36:32 AM]Checked for updates
+[28-08-2016 03:36:32 AM]Normal Mode GUI Load Up
+[28-08-2016 03:36:32 AM]Normal GUI Mode Loaded
+[28-08-2016 03:36:32 AM]Loading Configuration
+[28-08-2016 03:36:32 AM]Greetings My Lord
+[28-08-2016 03:36:32 AM]Reset Version
+[28-08-2016 03:36:32 AM]Loading Configurations
+[28-08-2016 03:36:32 AM]Finished Loading Configurations
+[28-08-2016 03:36:32 AM]Running Network Speed Test Thread
+[28-08-2016 03:36:32 AM]Running Check Updates Thread
+[28-08-2016 03:36:32 AM]Started Network Speed Test
+[28-08-2016 03:36:33 AM]Running Network Access Monitor Thread
+[28-08-2016 03:36:33 AM]Checking Updates
+[28-08-2016 03:36:33 AM]Checking Network Access
+[28-08-2016 03:36:33 AM]Stopped. Configuration Denied Access
+[28-08-2016 03:36:33 AM]Response Time : 365
+[28-08-2016 03:36:34 AM]New Updates
+[28-08-2016 03:36:34 AM]Threshold set to 0
+[28-08-2016 03:36:35 AM]Finished Checking Updates
+[28-08-2016 03:36:36 AM]Checking Network Access
+[28-08-2016 03:36:36 AM]Response Time : 265
+[28-08-2016 03:36:36 AM]Threshold set to 0
+[28-08-2016 03:36:39 AM]Checking Network Access
+[28-08-2016 03:36:46 AM]The operation has timed out
+[28-08-2016 03:36:46 AM]Checking Network Access
+[28-08-2016 03:36:46 AM]Threshold Set to 1
+[28-08-2016 03:36:46 AM]Unable to connect to the remote server
+[28-08-2016 03:36:46 AM]Checking Network Access
+[28-08-2016 03:36:46 AM]Threshold Set to 2
+[28-08-2016 03:36:46 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:36:46 AM]Checking Network Access
+[28-08-2016 03:36:46 AM]Threshold Set to 3
+[28-08-2016 03:36:46 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:36:46 AM]Checking Network Access
+[28-08-2016 03:36:47 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:36:47 AM]Threshold Set to 4
+[28-08-2016 03:36:47 AM]Checking Network Access
+[28-08-2016 03:36:47 AM]Threshold Set to 5
+[28-08-2016 03:36:47 AM]Threshold Limit Reached. Restoring Network
+[28-08-2016 03:36:47 AM]The remote name could not be resolved: 'www.google.com'
+[28-08-2016 03:36:47 AM]Checking Network Access
+[28-08-2016 03:36:47 AM]Started Application
+[28-08-2016 03:36:47 AM]Parameters Loaded
+[28-08-2016 03:36:47 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" -hidden -lostnet
+[28-08-2016 03:36:47 AM]Logging in
+[28-08-2016 03:36:48 AM]Unable to connect. Switching to Standby Mode
+[28-08-2016 03:36:48 AM]See you in 900000 milliseconds
+[28-08-2016 03:51:57 AM]Started Application
+[28-08-2016 03:51:57 AM]Parameters Loaded
+[28-08-2016 03:51:58 AM]"C:\Users\Nisch\OneDrive\Documents\Visual Studio 2015\Projects\Bits Internet Accessibility Supervisor\Bits Internet Accessibility Supervisor\bin\Debug\Bits Internet Accessibility Supervisor.EXE" -hidden -lostnet
+[28-08-2016 03:51:58 AM]Logging in
+[28-08-2016 03:51:59 AM]Logged in
+[28-08-2016 03:51:59 AM]Checking Updates
+[28-08-2016 03:52:01 AM]New Updates
+[28-08-2016 03:52:01 AM]Checked for updates
+[28-08-2016 03:52:01 AM]Restored Net
+[28-08-2016 03:52:01 AM]Background Mode GUI Load Up
+[28-08-2016 03:52:01 AM]Starting Background Network Monitor
+[28-08-2016 03:52:01 AM]Checking Network Access
+[28-08-2016 03:52:02 AM]Threshold Set to 0
+[28-08-2016 03:52:05 AM]Checking Network Access
+[28-08-2016 03:52:05 AM]Threshold Set to 0
+[28-08-2016 03:52:07 AM]Checking Network Access
+[28-08-2016 03:52:09 AM]Threshold Set to 0
+[28-08-2016 03:52:11 AM]Checking Network Access
+[28-08-2016 03:52:12 AM]Threshold Set to 0
+[28-08-2016 03:52:14 AM]Checking Network Access
+[28-08-2016 03:52:14 AM]Threshold Set to 0
+[28-08-2016 03:52:17 AM]Checking Network Access
+[28-08-2016 03:52:17 AM]Threshold Set to 0
+[28-08-2016 03:52:20 AM]Checking Network Access
+[28-08-2016 03:52:20 AM]Threshold Set to 0
+[28-08-2016 03:52:23 AM]Checking Network Access
+[28-08-2016 03:52:23 AM]Threshold Set to 0
+[28-08-2016 03:52:25 AM]Checking Network Access
+[28-08-2016 03:52:26 AM]Threshold Set to 0
+[28-08-2016 03:52:28 AM]Checking Network Access
+[28-08-2016 03:52:29 AM]Threshold Set to 0
+[28-08-2016 03:52:31 AM]Checking Network Access
+[28-08-2016 03:52:32 AM]Threshold Set to 0
+[28-08-2016 03:52:35 AM]Checking Network Access
+[28-08-2016 03:52:35 AM]Threshold Set to 0
+[28-08-2016 03:52:38 AM]Checking Network Access
+[28-08-2016 03:52:38 AM]Threshold Set to 0
+[28-08-2016 03:52:40 AM]Checking Network Access
+[28-08-2016 03:52:41 AM]Threshold Set to 0
+[28-08-2016 03:52:43 AM]Checking Network Access
+[28-08-2016 03:52:43 AM]Threshold Set to 0
+[28-08-2016 03:52:46 AM]Checking Network Access
+[28-08-2016 03:52:46 AM]Threshold Set to 0
+[28-08-2016 03:52:49 AM]Checking Network Access
+[28-08-2016 03:52:49 AM]Threshold Set to 0
+[28-08-2016 03:52:52 AM]Checking Network Access
+[28-08-2016 03:52:52 AM]Threshold Set to 0
+[28-08-2016 03:52:55 AM]Checking Network Access
+[28-08-2016 03:52:55 AM]Threshold Set to 0
+[28-08-2016 03:52:58 AM]Checking Network Access
+[28-08-2016 03:52:59 AM]Threshold Set to 0
+[28-08-2016 03:53:01 AM]Checking Network Access
+[28-08-2016 03:53:02 AM]Threshold Set to 0
+[28-08-2016 03:53:04 AM]Checking Network Access
+[28-08-2016 03:53:04 AM]Threshold Set to 0
+[28-08-2016 03:53:07 AM]Checking Network Access
+[28-08-2016 03:53:07 AM]Threshold Set to 0
+[28-08-2016 03:53:10 AM]Checking Network Access
+[28-08-2016 03:53:10 AM]Threshold Set to 0
+[28-08-2016 03:53:13 AM]Checking Network Access
+[28-08-2016 03:53:13 AM]Threshold Set to 0
+[28-08-2016 03:53:15 AM]Checking Network Access
+[28-08-2016 03:53:16 AM]Threshold Set to 0
+[28-08-2016 03:53:18 AM]Checking Network Access
+[28-08-2016 03:53:19 AM]Threshold Set to 0
+[28-08-2016 03:53:21 AM]Checking Network Access
+[28-08-2016 03:53:21 AM]Threshold Set to 0
+[28-08-2016 03:53:24 AM]Checking Network Access
+[28-08-2016 03:53:24 AM]Threshold Set to 0
+[28-08-2016 03:53:27 AM]Checking Network Access
+[28-08-2016 03:53:27 AM]Threshold Set to 0

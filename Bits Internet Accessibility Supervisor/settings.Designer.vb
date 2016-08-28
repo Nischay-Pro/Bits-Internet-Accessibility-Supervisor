@@ -33,6 +33,7 @@ Partial Class settings
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroCheckBox4 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox3 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox2 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
@@ -57,7 +58,7 @@ Partial Class settings
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(23, 63)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(436, 354)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -176,6 +177,7 @@ Partial Class settings
         '
         'MetroTabPage2
         '
+        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox4)
         Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox3)
         Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox2)
         Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox1)
@@ -190,6 +192,16 @@ Partial Class settings
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.VerticalScrollbarSize = 10
+        '
+        'MetroCheckBox4
+        '
+        Me.MetroCheckBox4.AutoSize = True
+        Me.MetroCheckBox4.Location = New System.Drawing.Point(19, 121)
+        Me.MetroCheckBox4.Name = "MetroCheckBox4"
+        Me.MetroCheckBox4.Size = New System.Drawing.Size(86, 15)
+        Me.MetroCheckBox4.TabIndex = 5
+        Me.MetroCheckBox4.Text = "Enable Logs"
+        Me.MetroCheckBox4.UseSelectable = True
         '
         'MetroCheckBox3
         '
@@ -352,4 +364,5 @@ Partial Class settings
     Friend WithEvents Label3 As Label
     Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroCheckBox3 As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents MetroCheckBox4 As MetroFramework.Controls.MetroCheckBox
 End Class

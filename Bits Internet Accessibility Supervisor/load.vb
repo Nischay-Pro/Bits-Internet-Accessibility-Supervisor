@@ -10,16 +10,19 @@ Public Class loadman
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If Loggedin = True Then
             If Environment.CommandLine.Contains("hidden") Then
+                Log("Background Mode GUI Load Up")
                 NotifyIcon1.Visible = True
                 Me.Hide()
                 Timer1.Stop()
                 If Environment.CommandLine.Contains("lostnet") Then
+                    Log("Starting Background Network Monitor")
                     Dim recheckaccess1 As New Threading.Thread(AddressOf RecheckAccess)
                     recheckaccess1.IsBackground = True
                     recheckaccess1.SetApartmentState(Threading.ApartmentState.STA)
                     recheckaccess1.Start()
                 End If
             Else
+                Log("Normal Mode GUI Load Up")
                 Dim newman As New Form1
                 newman.Show()
                 Me.Close()
@@ -60,22 +63,7 @@ Public Class loadman
         Return rep
     End Function
     Private Sub CheckLogin()
-        If Environment.CommandLine.Contains("hidden") Then
-            Try
-                Dim webman As New WebClient
-                Dim stringman As String = webman.DownloadString("https://raw.githubusercontent.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/master/Bits%20Internet%20Accessibility%20Supervisor/bin/Release/version.txt")
-                stringman = stringman.Substring(0, My.Application.Info.Version.ToString.Length)
-                If stringman = My.Application.Info.Version.ToString Then
-                Else
-                    If Not Environment.CommandLine.Contains("-lostnet") Then
-                        If MessageBox.Show("A newer update is available. Would you like to download?", "Newer Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
-                            Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
-                        End If
-                    End If
-                End If
-            Catch ex As Exception
-            End Try
-        End If
+        Log("Logging in")
         Dim username As String = Nothing
         Dim password As String = Nothing
         Dim ini As New IniFile
@@ -102,44 +90,93 @@ abc:
                 browser.Document.GetElementById("username").SetAttribute("value", username)
                 browser.Document.GetElementById("password").SetAttribute("value", password)
                 browser.Document.GetElementById("btnSubmit").InvokeMember("click")
-                wait(2000)
+                wait(500)
             Catch ex As Exception
                 If Environment.CommandLine.Contains("lostnet") Then
+                    Log("Unable to connect. Switching to Standby Mode")
                     Me.Hide()
-                    Threading.Thread.Sleep(60 * 1000 * 15)
+                    Timer1.Stop()
+                    Timer2.Stop()
+                    Log("See you in " & 60 * 1000 * 15 & " milliseconds")
+                    For i As Integer = 0 To 900
+                        Threading.Thread.Sleep(1000)
+                    Next
+
                     Process.Start(Application.ExecutablePath, "-hidden -lostnet")
                     End
                 Else
+                    Log("Cannot Connect to Cyberoam")
                     MsgBox("Couldn't Connect to Cyberoam. Either Cyberoam is down or your not connected to a Cyberoam Network.", MsgBoxStyle.Exclamation, "Cyberoam Connection Failure")
                     End
                 End If
             End Try
         Else
-            wait(1000)
+            wait(500)
             GoTo abc
         End If
 def:
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             If browser.Document.Body.InnerText.Contains("You have successfully logged in") Then
+                Log("Logged in")
+                CheckUpdates()
                 Loggedin = True
                 If Environment.CommandLine.Contains("-lostnet") Then
-                    GenerateNotification("Net has been restored. :)", EventType.Warning, 5000)
+                    Log("Restored Net")
+                    'GenerateNotification("Net has been restored. :)", EventType.Warning, 5000)
+                End If
+                If Environment.CommandLine.Contains("-logout") Then
+                    Log("Logging off")
+                    browser.Document.GetElementById("btnSubmit").InvokeMember("click")
+                    wait(500)
+                    If browser.Document.Body.InnerText.Contains("You have successfully logged off") Then
+                        Log("Logged off")
+                        End
+                    End If
                 End If
             ElseIf browser.Document.Body.InnerText.Contains("Your data transfer has been exceeded, Please contact the administrator") Then
+                Log("Data Transfer Exceeded")
                 'GenerateNotification("Your data transfer has exceeded. :(", EventType.Warning, 5000)
                 openlogin = True
                 Exit Sub
             ElseIf browser.Document.Body.InnerText.Contains("The system could not log you on. Make sure your password is correct") Then
+                Log("Incorrect Credentials")
                 'GenerateNotification("Your credentials were incorrect. Retry again.", EventType.Warning, 5000)
                 openlogin = True
                 Exit Sub
             Else
+                Log("Server Crashed")
                 GenerateNotification("Server is not responding. Please try again later", EventType.Warning, 5000)
             End If
         Else GoTo def
         End If
     End Sub
+    Private Sub CheckUpdates()
+        Log("Checking Updates")
+        If Environment.CommandLine.Contains("hidden") Then
+            Try
+                Dim webman As New WebClient
+                Dim stringman As String = webman.DownloadString("https://raw.githubusercontent.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/master/Bits%20Internet%20Accessibility%20Supervisor/bin/Release/version.txt")
+                stringman = stringman.Substring(0, My.Application.Info.Version.ToString.Length)
+                If stringman = My.Application.Info.Version.ToString Then
+                    Log("No New Updates")
+                Else
+                    Log("New Updates")
+                    If Not Environment.CommandLine.Contains("-lostnet") Then
+                        If MessageBox.Show("A newer update is available. Would you like to download?", "Newer Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                            Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+                Log(ex.Message)
+            End Try
+        End If
+        Log("Checked for updates")
+    End Sub
     Private Sub loadman_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Log("Started Application")
+        Log("Parameters Loaded")
+        Log(Environment.CommandLine)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\version.txt", My.Application.Info.Version.ToString, False)
         Dim threada As New Threading.Thread(AddressOf Check)
         threada.SetApartmentState(Threading.ApartmentState.STA)
@@ -151,6 +188,7 @@ def:
         Try
             CheckLogin()
         Catch ex As Exception
+            Log(ex.Message)
             GenerateNotification("Something wrong happened. :(", EventType.Critical, 5000)
             wait(5000)
             End
@@ -191,17 +229,24 @@ def:
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If LostInternet = True Then
-            Process.Start(Application.ExecutablePath, "-hidden -lostnet")
-            End
+            threshold += 1
+            Log("Threshold now at " & threshold)
+            If threshold = 5 Then
+                Log("Reached Threshold Limit. Restoring Network Access.")
+                Process.Start(Application.ExecutablePath, "-hidden -lostnet")
+                End
+            End If
         End If
     End Sub
+    Dim threshold As Integer = 0
     Dim LostInternet As Boolean = False
     Private Sub RecheckAccess()
 startman:
+        Log("Checking Network Access")
         Try
             Dim request As WebRequest = WebRequest.Create("http://www.google.com")
             request.Credentials = CredentialCache.DefaultCredentials
-            request.Timeout = 5 * 1000
+            request.Timeout = 7 * 1000
             Dim response As WebResponse = request.GetResponse()
             Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)
             Dim dataStream As Stream = response.GetResponseStream()
@@ -212,11 +257,13 @@ startman:
             If responseFromServer.Contains("http://172.16.0.30:8090/httpclient.html") Then
                 LostInternet = True
             Else
+                Log("Threshold Set to 0")
+                threshold = 0
             End If
-            Threading.Thread.Sleep(5000)
-            GoTo startman
+            Threading.Thread.Sleep(2500)
         Catch ex As Exception
             LostInternet = True
         End Try
+        GoTo startman
     End Sub
 End Class

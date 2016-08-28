@@ -199,4 +199,19 @@ Module methods
             Return False
         End Try
     End Function
+
+    Public Sub Log(ByVal Message As String)
+        Try
+            Dim ini As New IniFile
+            ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
+            If ini.GetKeyValue("Settings", "Logs") = "True" Then
+                Dim clean As String = DateAndTime.Today.ToString("d")
+                clean = clean.Replace("-", "")
+                My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\logs\" & clean & ".txt", "[" & DateTime.Now.ToLocalTime & "]" & Message & vbNewLine, True)
+            End If
+            Dim prevdays As New ListBox
+            Dim i As Integer = 0
+        Catch ex As Exception
+        End Try
+    End Sub
 End Module

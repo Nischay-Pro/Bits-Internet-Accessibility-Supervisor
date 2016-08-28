@@ -35,6 +35,19 @@ Public Class settings
         Else
             ini.SetKeyValue("Settings", "Automatic", "False")
         End If
+        If MetroCheckBox4.Checked = True Then
+            ini.SetKeyValue("Settings", "Logs", "True")
+            Try
+                My.Computer.FileSystem.CreateDirectory(My.Application.Info.DirectoryPath & "\logs")
+            Catch ex As Exception
+            End Try
+        Else
+            ini.SetKeyValue("Settings", "Logs", "False")
+            Try
+                My.Computer.FileSystem.DeleteDirectory(My.Application.Info.DirectoryPath & "\logs", FileIO.DeleteDirectoryOption.DeleteAllContents)
+            Catch ex As Exception
+            End Try
+        End If
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         MetroButton1.Enabled = False
         MetroButton2.Enabled = True
@@ -82,6 +95,9 @@ Public Class settings
         End If
         If ini.GetKeyValue("Settings", "Automatic") = "True" Then
             MetroCheckBox3.Checked = True
+        End If
+        If ini.GetKeyValue("Settings", "Logs") = "True" Then
+            MetroCheckBox4.Checked = True
         End If
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         MetroButton1.Enabled = False

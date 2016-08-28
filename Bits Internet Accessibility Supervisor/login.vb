@@ -5,7 +5,9 @@ Public Class login
         Timer1.Start()
         If MetroTextBox1.Text <> Nothing And MetroTextBox2.Text <> Nothing Then
             Dim ini As New IniFile
+            Log("Loading Configuration")
             If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\config.ini") Then
+                Log("Found Configuration")
                 ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
                 ini.AddSection("Authentication")
                 ini.SetKeyValue("Authentication", "Username", MetroTextBox1.Text)
@@ -14,6 +16,7 @@ Public Class login
                 ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
                 CheckLogin()
             Else
+                Log("Nope. Couldn't find. Newcomer. But how?")
                 ini.AddSection("Authentication")
                 ini.SetKeyValue("Authentication", "Username", MetroTextBox1.Text)
                 'ini.SetKeyValue("Authentication", "Password", EncryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), MetroTextBox2.Text))
@@ -28,6 +31,7 @@ Public Class login
     End Sub
     Private WithEvents browser As WebBrowser
     Private Sub CheckLogin()
+        Log("Checking Credentials")
         MetroTextBox2.Enabled = False
         MetroTextBox1.Enabled = False
         PictureBox2.Enabled = False
@@ -51,14 +55,18 @@ abc:
 def:
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             If browser.Document.Body.InnerText.Contains("You have successfully logged in") Then
+                Log("Credentials Verified. Your Good to GO.")
                 Process.Start(Application.ExecutablePath)
                 End
             ElseIf browser.Document.Body.InnerText.Contains("Your data transfer has been exceeded, Please contact the administrator") Then
+                Log("Data Transfer Exceeded")
                 GenerateNotification("Your data transfer has exceeded. :(", EventType.Warning, 5000)
             ElseIf browser.Document.Body.InnerText.Contains("The system could not log you on. Make sure your password is correct") Then
                 GenerateNotification("Your credentials were incorrect. Retry again.", EventType.Warning, 5000)
+                Log("Invalid Credentials")
             Else
                 GenerateNotification("Server is not responding. Please try again later", EventType.Warning, 5000)
+                Log("Server Crash")
             End If
         Else
             GoTo def
@@ -84,5 +92,9 @@ def:
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Process.Start(Application.ExecutablePath)
         End
+    End Sub
+
+    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

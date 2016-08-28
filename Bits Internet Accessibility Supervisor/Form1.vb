@@ -6,27 +6,33 @@ Imports System.Text
 Public Class Form1
     Public FormData As MetroFramework.Forms.MetroForm
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Log("Normal GUI Mode Loaded")
         Dim ini As New IniFile
+        Log("Loading Configuration")
         ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
         Dim welcomeme As String = Nothing
-
         If ini.GetKeyValue("Authentication", "Username") = "f2015606" Then
+            Log("Greetings My Lord")
             welcomeme = "My Lord"
         Else
             welcomeme = ini.GetKeyValue("Authentication", "Username")
         End If
+        Log("Reset Version")
         ini.SetKeyValue("Settings", "Version", My.Application.Info.Version.ToString)
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         Label1.Text = "Welcome " & welcomeme
         LoadSettings(True)
+        Log("Running Network Speed Test Thread")
         Dim speedrunner As New Threading.Thread(Sub() RunNetworkSpeed(True))
         speedrunner.IsBackground = True
         speedrunner.SetApartmentState(Threading.ApartmentState.STA)
         speedrunner.Start()
+        Log("Running Check Updates Thread")
         Dim checkupdates As New Threading.Thread(AddressOf UpdateCheck)
         checkupdates.IsBackground = True
         checkupdates.SetApartmentState(Threading.ApartmentState.STA)
         checkupdates.Start()
+        Log("Running Network Access Monitor Thread")
         Dim recheckaccess1 As New Threading.Thread(AddressOf RecheckAccess)
         recheckaccess1.IsBackground = True
         recheckaccess1.SetApartmentState(Threading.ApartmentState.STA)
@@ -36,12 +42,15 @@ Public Class Form1
 
     Private Sub UpdateCheck()
         Try
+            Log("Checking Updates")
             Dim webman As New WebClient
             Dim stringman As String = webman.DownloadString("https://raw.githubusercontent.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/master/Bits%20Internet%20Accessibility%20Supervisor/bin/Release/version.txt")
             stringman = stringman.Substring(0, My.Application.Info.Version.ToString.Length)
             If stringman = My.Application.Info.Version.ToString Then
                 SetLabelText("No updates are available.", Label5)
+                Log("No Updates")
             Else
+                Log("New Updates")
                 If Not Environment.CommandLine.Contains("-lostnet") Then
                     If MessageBox.Show("A newer update is available. Would you like to download?", "Newer Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                         Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
@@ -52,6 +61,7 @@ Public Class Form1
         Catch ex As Exception
             SetLabelText("Couldn't check for updates.", Label5)
         End Try
+        Log("Finished Checking Updates")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -62,12 +72,14 @@ Public Class Form1
     End Sub
 
     Private Sub RunNetworkSpeed(ByVal First As Boolean)
+        Log("Started Network Speed Test")
         If First = True Then
             Dim ini As New IniFile
             ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
             If ini.GetKeyValue("Settings", "Automatic") = "True" Then
                 GoTo ad
             Else
+                Log("Stopped. Network Speed Test. Configuration Denied Access")
                 SetLabelText("Network Speed : Click to Calculate", Label6)
             End If
         Else
@@ -84,6 +96,8 @@ ad:
                 SetLabelText("Network Speed : Calculating " & Math.Round((i / 49 * 100)) & "%", Label6)
             Loop
             SetLabelText("Network Speed : " & FormatFileSize(avgamt / 50) & "ps. Click to Recalculate.", Label6)
+            Log("Finished Network Speed Test")
+            Log("Result : " & FormatFileSize(avgamt / 50) & "ps.")
         End If
     End Sub
 
@@ -105,9 +119,11 @@ ad:
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Log("Good Bye. User Closed App")
         End
     End Sub
     Public Sub LoadSettings(ByVal WithNotification As Boolean)
+        Log("Loading Configurations")
         Dim ini As New IniFile
         ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
         Dim profilename As String = ini.GetKeyValue("Profile", "Profile Name")
@@ -127,7 +143,7 @@ ad:
             PictureBox1.Image = My.Resources.professor
         End If
         Label1.Text = "Welcome " & profilename
-
+        Log("Finished Loading Configurations")
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
@@ -146,6 +162,7 @@ ad:
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        Log("Reconnecting")
         Process.Start(Application.ExecutablePath)
         End
     End Sub
@@ -160,26 +177,43 @@ ad:
             Process.Start("https://github.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/releases")
         End If
     End Sub
-
+    Dim threshold As Integer = 0
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         If LostInternet = True Then
-            Process.Start(Application.ExecutablePath, "-hidden -lostnet")
-            End
+            threshold += 1
+            Log("Threshold Set to " & threshold)
+            If threshold = 5 Then
+                Log("Threshold Limit Reached. Restoring Network")
+                Process.Start(Application.ExecutablePath, "-hidden -lostnet")
+                End
+            End If
         End If
     End Sub
     Dim LostInternet As Boolean = False
+    Dim respav As New ListBox
     Private Sub RecheckAccess()
 startman:
         Try
+            Log("Checking Network Access")
             Dim timespaner As New Stopwatch
             timespaner.Start()
             Dim request As WebRequest = WebRequest.Create("http://www.google.com")
             request.Credentials = CredentialCache.DefaultCredentials
-            request.Timeout = 5 * 1000
+            request.Timeout = 7 * 1000
             Dim response As WebResponse = request.GetResponse()
             timespaner.Stop()
             Dim dataStream As Stream = response.GetResponseStream()
-            SetLabelText("Response Time : " & timespaner.ElapsedMilliseconds & " ms", Label9)
+            respav.Items.Add(timespaner.ElapsedMilliseconds)
+            Dim avgresp As Integer = 0
+            For Each Item As Integer In respav.Items
+                avgresp += Item
+            Next
+            avgresp = avgresp / respav.Items.Count
+            If respav.Items.Count = 5 Then
+                respav.Items.RemoveAt(0)
+            End If
+            Log("Response Time : " & timespaner.ElapsedMilliseconds)
+            SetLabelText("Response Time : " & timespaner.ElapsedMilliseconds & " ms (" & avgresp & ")", Label9)
             Dim reader As New StreamReader(dataStream)
             Dim responseFromServer As String = reader.ReadToEnd()
             reader.Close()
@@ -187,11 +221,20 @@ startman:
             If responseFromServer.Contains("http://172.16.0.30:8090/httpclient.html") Then
                 LostInternet = True
             Else
+                Log("Threshold set to 0")
+                threshold = 0
             End If
-            Threading.Thread.Sleep(5000)
-            GoTo startman
+            Threading.Thread.Sleep(2500)
         Catch ex As Exception
+            Log(ex.Message)
             LostInternet = True
         End Try
+        GoTo startman
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+        Log("Logging Out")
+        Process.Start(Application.ExecutablePath, "-logout")
+        End
     End Sub
 End Class

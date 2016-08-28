@@ -29,6 +29,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -39,8 +41,7 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +75,7 @@ Partial Class Form1
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Controls.Add(Me.Label10)
         Me.MetroPanel1.Controls.Add(Me.Label9)
         Me.MetroPanel1.Controls.Add(Me.Label8)
         Me.MetroPanel1.Controls.Add(Me.Label7)
@@ -92,16 +94,39 @@ Partial Class Form1
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label9.Location = New System.Drawing.Point(83, 87)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(165, 19)
+        Me.Label9.TabIndex = 11
+        Me.Label9.Text = "Response Time : NaAN"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label8.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label8.Location = New System.Drawing.Point(22, 276)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(405, 38)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Your Internet Connection is being monitored and will be " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "restored whenever requi" &
+    "red."
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label7.Location = New System.Drawing.Point(369, 7)
+        Me.Label7.Location = New System.Drawing.Point(300, 7)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 19)
+        Me.Label7.Size = New System.Drawing.Size(89, 19)
         Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Reconnect"
+        Me.Label7.Text = "Reconnect |"
         '
         'Label6
         '
@@ -177,28 +202,16 @@ Partial Class Form1
         '
         Me.Timer3.Enabled = True
         '
-        'Label8
+        'Label10
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.Label8.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label8.Location = New System.Drawing.Point(22, 276)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(405, 38)
-        Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Your Internet Connection is being monitored and will be " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "restored whenever requi" &
-    "red."
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.Label9.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label9.Location = New System.Drawing.Point(83, 87)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(165, 19)
-        Me.Label9.TabIndex = 11
-        Me.Label9.Text = "Response Time : NaAN"
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label10.Location = New System.Drawing.Point(386, 7)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(57, 19)
+        Me.Label10.TabIndex = 12
+        Me.Label10.Text = "Logout"
         '
         'Form1
         '
@@ -238,4 +251,5 @@ Partial Class Form1
     Friend WithEvents Timer3 As Timer
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class
