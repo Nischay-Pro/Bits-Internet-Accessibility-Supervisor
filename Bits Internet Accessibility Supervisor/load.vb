@@ -101,12 +101,13 @@ abc:
                     For i As Integer = 0 To 900
                         Threading.Thread.Sleep(1000)
                     Next
-
+                    Denotify()
                     Process.Start(Application.ExecutablePath, "-hidden -lostnet")
                     End
                 Else
                     Log("Cannot Connect to Cyberoam")
                     MsgBox("Couldn't Connect to Cyberoam. Either Cyberoam is down or your not connected to a Cyberoam Network.", MsgBoxStyle.Exclamation, "Cyberoam Connection Failure")
+                    Denotify()
                     End
                 End If
             End Try
@@ -130,6 +131,9 @@ def:
                     wait(500)
                     If browser.Document.Body.InnerText.Contains("You have successfully logged off") Then
                         Log("Logged off")
+                        NotifyIcon1.Visible = False
+                        NotifyIcon1.Dispose()
+                        Denotify()
                         End
                     End If
                 End If
@@ -212,7 +216,12 @@ def:
             Return False
         End Try
     End Function
-
+    Private Sub Denotify()
+        NotifyIcon1.Visible = False
+        NotifyIcon1.Icon = Nothing
+        NotifyIcon1.Dispose()
+        NotifyIcon1 = Nothing
+    End Sub
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
         NotifyIcon1.Visible = False
         Dim newman As New Form1
@@ -233,6 +242,7 @@ def:
             Log("Threshold now at " & threshold)
             If threshold = 5 Then
                 Log("Reached Threshold Limit. Restoring Network Access.")
+                Denotify()
                 Process.Start(Application.ExecutablePath, "-hidden -lostnet")
                 End
             End If

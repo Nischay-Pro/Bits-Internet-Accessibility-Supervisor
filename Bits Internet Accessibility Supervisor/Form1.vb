@@ -119,8 +119,16 @@ ad:
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Log("Good Bye. User Closed App")
-        End
+        If LogoutClose = False Then
+            Log("Good Bye. User Closed App")
+            Denotify()
+            End
+        Else
+            Log("Logging Out and Closing")
+            Denotify()
+            Process.Start(Application.ExecutablePath, "-logout")
+            End
+        End If
     End Sub
     Public Sub LoadSettings(ByVal WithNotification As Boolean)
         Log("Loading Configurations")
@@ -131,6 +139,9 @@ ad:
             settings.Show()
         ElseIf WithNotification = True And Not Environment.CommandLine.Contains("-hidden") Then
             GenerateNotification("Welcome " & profilename & ". You have been logged in successfully.", EventType.Information, 2000)
+        End If
+        If ini.GetKeyValue("Settings", "LogoutClose") = "True" Then
+            LogoutClose = True
         End If
         Dim gender As String = ini.GetKeyValue("Profile", "Gender")
         If gender = "Male" Then
@@ -163,6 +174,7 @@ ad:
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
         Log("Reconnecting")
+        Denotify()
         Process.Start(Application.ExecutablePath)
         End
     End Sub
@@ -178,12 +190,20 @@ ad:
         End If
     End Sub
     Dim threshold As Integer = 0
+    Private Sub Denotify()
+        NotifyIcon1.Visible = False
+        NotifyIcon1.Icon = Nothing
+        NotifyIcon1.Dispose()
+        NotifyIcon1 = Nothing
+    End Sub
+    Dim LogoutClose As Boolean = False
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         If LostInternet = True Then
             threshold += 1
             Log("Threshold Set to " & threshold)
             If threshold = 5 Then
                 Log("Threshold Limit Reached. Restoring Network")
+                Denotify()
                 Process.Start(Application.ExecutablePath, "-hidden -lostnet")
                 End
             End If
@@ -234,6 +254,7 @@ startman:
 
     Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
         Log("Logging Out")
+        Denotify()
         Process.Start(Application.ExecutablePath, "-logout")
         End
     End Sub

@@ -33,10 +33,16 @@ Partial Class settings
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroCheckBox5 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox4 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox3 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox2 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
+        Me.MetroTabPage4 = New MetroFramework.Controls.MetroTabPage()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
@@ -44,9 +50,12 @@ Partial Class settings
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
+        Me.MetroTabPage4.SuspendLayout()
         Me.MetroTabPage3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,10 +64,11 @@ Partial Class settings
         '
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage4)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(23, 63)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
+        Me.MetroTabControl1.SelectedIndex = 2
         Me.MetroTabControl1.Size = New System.Drawing.Size(436, 354)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -90,7 +100,7 @@ Partial Class settings
         Me.MetroButton3.Name = "MetroButton3"
         Me.MetroButton3.Size = New System.Drawing.Size(177, 23)
         Me.MetroButton3.TabIndex = 7
-        Me.MetroButton3.Text = "Revoke Cyberoam Profile"
+        Me.MetroButton3.Text = "Reset Configuration"
         Me.MetroButton3.UseSelectable = True
         '
         'MetroLabel2
@@ -177,6 +187,7 @@ Partial Class settings
         '
         'MetroTabPage2
         '
+        Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox5)
         Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox4)
         Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox3)
         Me.MetroTabPage2.Controls.Add(Me.MetroCheckBox2)
@@ -192,6 +203,16 @@ Partial Class settings
         Me.MetroTabPage2.VerticalScrollbarBarColor = True
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.VerticalScrollbarSize = 10
+        '
+        'MetroCheckBox5
+        '
+        Me.MetroCheckBox5.AutoSize = True
+        Me.MetroCheckBox5.Location = New System.Drawing.Point(19, 142)
+        Me.MetroCheckBox5.Name = "MetroCheckBox5"
+        Me.MetroCheckBox5.Size = New System.Drawing.Size(198, 15)
+        Me.MetroCheckBox5.TabIndex = 6
+        Me.MetroCheckBox5.Text = "Logout before exiting application"
+        Me.MetroCheckBox5.UseSelectable = True
         '
         'MetroCheckBox4
         '
@@ -232,6 +253,63 @@ Partial Class settings
         Me.MetroCheckBox1.TabIndex = 2
         Me.MetroCheckBox1.Text = "Start with Windows"
         Me.MetroCheckBox1.UseSelectable = True
+        '
+        'MetroTabPage4
+        '
+        Me.MetroTabPage4.Controls.Add(Me.ListView1)
+        Me.MetroTabPage4.Controls.Add(Me.MetroLabel5)
+        Me.MetroTabPage4.Controls.Add(Me.MetroButton5)
+        Me.MetroTabPage4.Controls.Add(Me.MetroButton4)
+        Me.MetroTabPage4.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage4.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage4.HorizontalScrollbarSize = 10
+        Me.MetroTabPage4.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage4.Name = "MetroTabPage4"
+        Me.MetroTabPage4.Size = New System.Drawing.Size(428, 312)
+        Me.MetroTabPage4.TabIndex = 3
+        Me.MetroTabPage4.Text = "Accounts"
+        Me.MetroTabPage4.VerticalScrollbarBarColor = True
+        Me.MetroTabPage4.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage4.VerticalScrollbarSize = 10
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.ListView1.Location = New System.Drawing.Point(3, 77)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(425, 232)
+        Me.ListView1.TabIndex = 18
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'MetroLabel5
+        '
+        Me.MetroLabel5.AutoSize = True
+        Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.MetroLabel5.Location = New System.Drawing.Point(3, 50)
+        Me.MetroLabel5.Name = "MetroLabel5"
+        Me.MetroLabel5.Size = New System.Drawing.Size(127, 15)
+        Me.MetroLabel5.TabIndex = 17
+        Me.MetroLabel5.Text = "Primary Account : N/A"
+        '
+        'MetroButton5
+        '
+        Me.MetroButton5.Location = New System.Drawing.Point(229, 15)
+        Me.MetroButton5.Name = "MetroButton5"
+        Me.MetroButton5.Size = New System.Drawing.Size(196, 23)
+        Me.MetroButton5.TabIndex = 9
+        Me.MetroButton5.Text = "Remove Account"
+        Me.MetroButton5.UseSelectable = True
+        '
+        'MetroButton4
+        '
+        Me.MetroButton4.Location = New System.Drawing.Point(3, 15)
+        Me.MetroButton4.Name = "MetroButton4"
+        Me.MetroButton4.Size = New System.Drawing.Size(196, 23)
+        Me.MetroButton4.TabIndex = 8
+        Me.MetroButton4.Text = "Add Account"
+        Me.MetroButton4.UseSelectable = True
         '
         'MetroTabPage3
         '
@@ -295,8 +373,8 @@ Partial Class settings
         Me.MetroLabel3.Size = New System.Drawing.Size(384, 75)
         Me.MetroLabel3.TabIndex = 12
         Me.MetroLabel3.Text = "Bits Internet Accessibility Supervisor is an OpenSource project aimed to " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "simpli" &
-    "fy the login process of Cyberroam Clients in Bits Hyderabad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Campus." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created " &
-    "using .net Technologies."
+    "fy the login process of Cyberoam Clients in Bits Hyderabad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Campus." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created u" &
+    "sing .net Technologies."
         '
         'MetroButton1
         '
@@ -316,6 +394,16 @@ Partial Class settings
         Me.MetroButton2.TabIndex = 6
         Me.MetroButton2.Text = "Close"
         Me.MetroButton2.UseSelectable = True
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Account"
+        Me.ColumnHeader1.Width = 115
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Status"
+        Me.ColumnHeader2.Width = 192
         '
         'settings
         '
@@ -337,6 +425,8 @@ Partial Class settings
         Me.MetroTabPage1.PerformLayout()
         Me.MetroTabPage2.ResumeLayout(False)
         Me.MetroTabPage2.PerformLayout()
+        Me.MetroTabPage4.ResumeLayout(False)
+        Me.MetroTabPage4.PerformLayout()
         Me.MetroTabPage3.ResumeLayout(False)
         Me.MetroTabPage3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -365,4 +455,12 @@ Partial Class settings
     Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroCheckBox3 As MetroFramework.Controls.MetroCheckBox
     Friend WithEvents MetroCheckBox4 As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents MetroTabPage4 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MetroButton5 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroButton4 As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroCheckBox5 As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
 End Class

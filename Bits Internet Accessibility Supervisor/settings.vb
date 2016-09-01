@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
 
 Public Class settings
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
@@ -35,6 +37,12 @@ Public Class settings
         Else
             ini.SetKeyValue("Settings", "Automatic", "False")
         End If
+        If MetroCheckBox5.Checked = True Then
+            ini.SetKeyValue("Settings", "LogoutClose", "True")
+        Else
+            ini.SetKeyValue("Settings", "LogoutClose", "False")
+        End If
+
         If MetroCheckBox4.Checked = True Then
             ini.SetKeyValue("Settings", "Logs", "True")
             Try
@@ -99,9 +107,14 @@ Public Class settings
         If ini.GetKeyValue("Settings", "Logs") = "True" Then
             MetroCheckBox4.Checked = True
         End If
+        If ini.GetKeyValue("Settings", "LogoutClose") = "True" Then
+            MetroCheckBox5.Checked = True
+        End If
+        MetroLabel5.Text = "Primary Account : " & ini.GetKeyValue("Authentication", "Username").ToLower
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         MetroButton1.Enabled = False
         Label3.Text += " | Build " & My.Application.Info.Version.ToString
+        LoadAccountsMan()
     End Sub
 
     Private Sub MetroCheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles MetroCheckBox1.CheckedChanged
@@ -171,7 +184,7 @@ Public Class settings
     End Sub
 
     Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
-        If MessageBox.Show("Are you sure you want to revoke your Cyberoam Settings?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to reset your Settings?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Kill(My.Application.Info.DirectoryPath & "\config.ini")
             Process.Start(Application.ExecutablePath)
             End
@@ -186,5 +199,19 @@ Public Class settings
             RegKeyDelete()
             RegKeyAdd(False)
         End If
+    End Sub
+
+    Private Sub LoadAccountsMan()
+        Dim data As String = "{" & """accounts""" & ":[]}"
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        Else
+            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\accounts.json", data, False)
+        End If
+        Dim parsed As JObject = JObject.Parse(data)
+        For Each Item As JObject In parsed("accounts").ToArray
+            ListView1.Items.Add(Item("username"))
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(Item("status"))
+        Next
     End Sub
 End Class
