@@ -43,6 +43,9 @@ Public Class Form1
     Private Sub UpdateCheck()
         Try
             Log("Checking Updates")
+            If My.Application.OpenForms.OfType(Of settings).Count = 1 Then
+                Threading.Thread.Sleep(60000)
+            End If
             Dim webman As New WebClient
             Dim stringman As String = webman.DownloadString("https://raw.githubusercontent.com/Nischay-Pro/Bits-Internet-Accessibility-Supervisor/master/Bits%20Internet%20Accessibility%20Supervisor/bin/Release/version.txt")
             stringman = stringman.Substring(0, My.Application.Info.Version.ToString.Length)

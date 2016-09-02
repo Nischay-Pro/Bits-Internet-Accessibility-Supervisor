@@ -11,6 +11,43 @@ Module methods
         End If
     End Sub
     Public Delegate Sub SetText(text As String, Label As Control)
+    Public Sub AddListItem(ByVal text As String, ByVal subtext As String, ByVal List As ListView)
+        If List.InvokeRequired Then
+            List.Invoke(New AddListItemData(AddressOf AddListItem), text, subtext, List)
+        Else
+            List.Items.Add(text)
+            List.Items(List.Items.Count - 1).SubItems.Add(subtext)
+        End If
+    End Sub
+    Public Delegate Sub AddListItemData(text As String, subtext As String, List As Control)
+    Public Sub SetProgress(val As Integer, prog As MetroFramework.Controls.MetroProgressBar)
+        If prog.InvokeRequired Then
+            prog.Invoke(New SetProg(AddressOf SetProgress), val, prog)
+        Else
+            Dim current As Integer = prog.Value
+            Dim roundme As Integer = Math.Round(val - current / 1000)
+            Do Until prog.Value = val
+                prog.Value += 1
+            Loop
+        End If
+    End Sub
+    Public Delegate Sub SetProg(val As Integer, prog As MetroFramework.Controls.MetroProgressBar)
+    Public Sub SetControl(ByVal Control As Control, ByVal Bool As Boolean)
+        If Control.InvokeRequired Then
+            Control.Invoke(New SetCont(AddressOf SetControl), Control, Bool)
+        Else
+            Control.Enabled = Bool
+        End If
+    End Sub
+    Public Delegate Sub SetCont(Control As Control, Bool As Boolean)
+    Public Sub ClearList(ByVal Control As ListView)
+        If Control.InvokeRequired Then
+            Control.Invoke(New Clear(AddressOf ClearList), Control)
+        Else
+            Control.Items.Clear()
+        End If
+    End Sub
+    Public Delegate Sub Clear(Control As Control)
     Public Function FormatFileSize(ByVal Size As Long) As String
         Try
             Dim KB As Integer = 1024

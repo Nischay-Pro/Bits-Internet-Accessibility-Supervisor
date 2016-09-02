@@ -40,18 +40,18 @@ Partial Class settings
         Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroTabPage4 = New MetroFramework.Controls.MetroTabPage()
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -274,13 +274,27 @@ Partial Class settings
         '
         'ListView1
         '
+        Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.HoverSelection = True
         Me.ListView1.Location = New System.Drawing.Point(3, 77)
+        Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(425, 232)
         Me.ListView1.TabIndex = 18
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Account"
+        Me.ColumnHeader1.Width = 115
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Status"
+        Me.ColumnHeader2.Width = 192
         '
         'MetroLabel5
         '
@@ -352,17 +366,6 @@ Partial Class settings
         Me.MetroLabel4.TabIndex = 14
         Me.MetroLabel4.Text = "Click on OctoCat is view this project on Github " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(and contribute too)"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github
-        Me.PictureBox1.Location = New System.Drawing.Point(42, 146)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 13
-        Me.PictureBox1.TabStop = False
-        '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
@@ -395,15 +398,16 @@ Partial Class settings
         Me.MetroButton2.Text = "Close"
         Me.MetroButton2.UseSelectable = True
         '
-        'ColumnHeader1
+        'PictureBox1
         '
-        Me.ColumnHeader1.Text = "Account"
-        Me.ColumnHeader1.Width = 115
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Status"
-        Me.ColumnHeader2.Width = 192
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github
+        Me.PictureBox1.Location = New System.Drawing.Point(42, 146)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 13
+        Me.PictureBox1.TabStop = False
         '
         'settings
         '
@@ -419,7 +423,6 @@ Partial Class settings
         Me.Name = "settings"
         Me.Resizable = False
         Me.Text = "Settings"
-        Me.TopMost = True
         Me.MetroTabControl1.ResumeLayout(False)
         Me.MetroTabPage1.ResumeLayout(False)
         Me.MetroTabPage1.PerformLayout()

@@ -66,6 +66,10 @@ Public Class settings
         MetroButton1.Enabled = True
     End Sub
     Private Sub settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim loadsets As New Threading.Thread(AddressOf LoadAccountsMan)
+        loadsets.IsBackground = True
+        loadsets.SetApartmentState(Threading.ApartmentState.STA)
+        loadsets.Start()
         For Each TabControl As MetroFramework.Controls.MetroTabPage In Me.MetroTabControl1.Controls.OfType(Of MetroFramework.Controls.MetroTabPage)
             For Each Control As MetroFramework.Controls.MetroRadioButton In TabControl.Controls.OfType(Of MetroFramework.Controls.MetroRadioButton)
                 AddHandler Control.CheckedChanged, AddressOf ChangeDetect
@@ -114,7 +118,6 @@ Public Class settings
         ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
         MetroButton1.Enabled = False
         Label3.Text += " | Build " & My.Application.Info.Version.ToString
-        LoadAccountsMan()
     End Sub
 
     Private Sub MetroCheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles MetroCheckBox1.CheckedChanged
@@ -201,7 +204,10 @@ Public Class settings
         End If
     End Sub
 
-    Private Sub LoadAccountsMan()
+    Public Sub LoadAccountsMan()
+        SetControl(ListView1, False)
+        SetControl(MetroButton4, False)
+        SetControl(MetroButton5, False)
         Dim data As String = "{" & """accounts""" & ":[]}"
         If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
             data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
@@ -210,8 +216,71 @@ Public Class settings
         End If
         Dim parsed As JObject = JObject.Parse(data)
         For Each Item As JObject In parsed("accounts").ToArray
-            ListView1.Items.Add(Item("username"))
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(Item("status"))
+            AddListItem(Item("username"), Item("status"), ListView1)
         Next
+        SetControl(ListView1, True)
+        SetControl(MetroButton4, True)
+        If ListView1.Items.Count = 0 Then
+            SetControl(MetroButton5, False)
+        Else
+            SetControl(MetroButton5, True)
+        End If
+    End Sub
+
+    Public Sub AddData(ObjData As JObject)
+        ClearList(ListView1)
+        Dim data As String = "{" & """accounts""" & ":[]}"
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        Else
+            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\accounts.json", data, False)
+        End If
+        Dim parsed As JObject = JObject.Parse(data)
+        Dim JArrayman As JArray = parsed("accounts")
+        JArrayman.Add(ObjData)
+        parsed("accounts") = JArrayman
+        My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\accounts.json", parsed.ToString, False)
+    End Sub
+    Public Sub RemoveData(RemoveObj As String)
+        ClearList(ListView1)
+        Dim data As String = "{" & """accounts""" & ":[]}"
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        Else
+            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\accounts.json", data, False)
+        End If
+        Dim parsed As JObject = JObject.Parse(data)
+        Dim JArrayman As JArray = parsed("accounts")
+        Dim i As Integer
+        Do Until i = JArrayman.Count - 1
+            If JArrayman(i)("username") = RemoveObj Then
+                JArrayman(i).Remove()
+                Exit Do
+            End If
+            i += 1
+        Loop
+        'JArrayman.Add(ObjData)
+        parsed("accounts") = JArrayman
+        My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\accounts.json", parsed.ToString, False)
+    End Sub
+
+    Private Sub MetroButton4_Click(sender As Object, e As EventArgs) Handles MetroButton4.Click
+        addacct.Show()
+    End Sub
+
+    Private Sub MetroButton5_Click(sender As Object, e As EventArgs) Handles MetroButton5.Click
+        If ListView1.SelectedItems.Count <> 0 Then
+            If ListView1.Items.Count > 1 Then
+                RemoveData(ListView1.SelectedItems(0).Text)
+                Dim loadsets As New Threading.Thread(AddressOf LoadAccountsMan)
+                loadsets.IsBackground = True
+                loadsets.SetApartmentState(Threading.ApartmentState.STA)
+                loadsets.Start()
+            Else
+                Kill(My.Application.Info.DirectoryPath & "\accounts.json")
+                ListView1.Items.Clear()
+                MetroButton5.Enabled = False
+            End If
+        End If
     End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class loadman
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.MetroProgressBar1 = New MetroFramework.Controls.MetroProgressBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,12 +57,21 @@ Partial Class loadman
         '
         Me.Timer2.Enabled = True
         '
+        'MetroProgressBar1
+        '
+        Me.MetroProgressBar1.Location = New System.Drawing.Point(11, 164)
+        Me.MetroProgressBar1.Name = "MetroProgressBar1"
+        Me.MetroProgressBar1.Size = New System.Drawing.Size(406, 10)
+        Me.MetroProgressBar1.TabIndex = 1
+        Me.MetroProgressBar1.Visible = False
+        '
         'loadman
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(426, 182)
         Me.ControlBox = False
+        Me.Controls.Add(Me.MetroProgressBar1)
         Me.Controls.Add(Me.PictureBox1)
         Me.DisplayHeader = False
         Me.MaximizeBox = False
@@ -83,4 +93,5 @@ Partial Class loadman
     Friend WithEvents Timer1 As Timer
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents MetroProgressBar1 As MetroFramework.Controls.MetroProgressBar
 End Class

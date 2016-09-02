@@ -81,24 +81,28 @@ Public Class loadman
             openlogin = True
             Exit Sub
         End If
+        SetProgress(10, MetroProgressBar1)
         browser = New WebBrowser
         browser.ScriptErrorsSuppressed = True
         browser.Navigate("http://172.16.0.30:8090/httpclient.html")
+        SetProgress(30, MetroProgressBar1)
 abc:
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             Try
+                SetProgress(40, MetroProgressBar1)
                 browser.Document.GetElementById("username").SetAttribute("value", username)
                 browser.Document.GetElementById("password").SetAttribute("value", password)
                 browser.Document.GetElementById("btnSubmit").InvokeMember("click")
                 wait(500)
+                SetProgress(50, MetroProgressBar1)
             Catch ex As Exception
                 If Environment.CommandLine.Contains("lostnet") Then
                     Log("Unable to connect. Switching to Standby Mode")
                     Me.Hide()
                     Timer1.Stop()
                     Timer2.Stop()
-                    Log("See you in " & 60 * 1000 * 15 & " milliseconds")
-                    For i As Integer = 0 To 900
+                    Log("See you in " & 60 * 1000 * 2 & " milliseconds")
+                    For i As Integer = 0 To 120
                         Threading.Thread.Sleep(1000)
                     Next
                     Denotify()
@@ -116,9 +120,11 @@ abc:
             GoTo abc
         End If
 def:
+        SetProgress(80, MetroProgressBar1)
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             If browser.Document.Body.InnerText.Contains("You have successfully logged in") Then
                 Log("Logged in")
+                SetProgress(100, MetroProgressBar1)
                 CheckUpdates()
                 Loggedin = True
                 If Environment.CommandLine.Contains("-lostnet") Then
@@ -126,6 +132,7 @@ def:
                     'GenerateNotification("Net has been restored. :)", EventType.Warning, 5000)
                 End If
                 If Environment.CommandLine.Contains("-logout") Then
+                    SetProgress(90, MetroProgressBar1)
                     Log("Logging off")
                     browser.Document.GetElementById("btnSubmit").InvokeMember("click")
                     wait(500)
@@ -186,6 +193,7 @@ def:
         threada.SetApartmentState(Threading.ApartmentState.STA)
         threada.IsBackground = True
         threada.Start()
+        MetroProgressBar1.Visible = True
     End Sub
 
     Private Sub Check()
