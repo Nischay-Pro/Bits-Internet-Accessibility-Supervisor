@@ -22,3 +22,6 @@ Linux Support is still on hold. Failed during Mono Compilation.
 ## How to compile
 Download Latest Source Code and open with Visual Studio 2015 or higher.
 Switch build to "Debug" and run the application
+
+## Code of Conduct
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
