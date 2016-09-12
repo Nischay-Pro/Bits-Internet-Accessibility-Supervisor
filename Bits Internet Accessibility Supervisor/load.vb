@@ -2,6 +2,7 @@
 Imports System.Net
 Imports System.Net.NetworkInformation
 Imports System.Text
+Imports Newtonsoft.Json.Linq
 
 Public Class loadman
     Public Loggedin As Boolean = False
@@ -62,25 +63,7 @@ Public Class loadman
         rep = rep.Replace(".", "")
         Return rep
     End Function
-    Private Sub CheckLogin()
-        Log("Logging in")
-        Dim username As String = Nothing
-        Dim password As String = Nothing
-        Dim ini As New IniFile
-        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\config.ini") Then
-            ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
-            username = ini.GetKeyValue("Authentication", "Username")
-            Try
-                'password = DecryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), ini.GetKeyValue("Authentication", "Password"))
-                password = ini.GetKeyValue("Authentication", "Password")
-            Catch ex As Exception
-                openlogin = True
-                Exit Sub
-            End Try
-        Else
-            openlogin = True
-            Exit Sub
-        End If
+    Private Sub CheckLogin(username As String, password As String, secondary As Boolean)
         SetProgress(10, MetroProgressBar1)
         browser = New WebBrowser
         browser.ScriptErrorsSuppressed = True
@@ -156,7 +139,7 @@ def:
                 Exit Sub
             Else
                 Log("Server Crashed")
-                GenerateNotification("Server is not responding. Please try again later", EventType.Warning, 5000)
+                GenerateNotification2("Server is not responding. Please try again later", EventType.Warning, 5000)
             End If
         Else GoTo def
         End If
@@ -198,10 +181,28 @@ def:
 
     Private Sub Check()
         Try
-            CheckLogin()
+            Log("Logging in")
+            Dim username As String = Nothing
+            Dim password As String = Nothing
+            Dim ini As New IniFile
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\config.ini") Then
+                ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
+                username = ini.GetKeyValue("Authentication", "Username")
+                Try
+                    'password = DecryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), ini.GetKeyValue("Authentication", "Password"))
+                    password = ini.GetKeyValue("Authentication", "Password")
+                Catch ex As Exception
+                    openlogin = True
+                    Exit Sub
+                End Try
+            Else
+                openlogin = True
+                Exit Sub
+            End If
+            CheckLogin(username, password, False)
         Catch ex As Exception
             Log(ex.Message)
-            GenerateNotification("Something wrong happened. :(", EventType.Critical, 5000)
+            GenerateNotification2("Something wrong happened. :(", EventType.Critical, 5000)
             wait(5000)
             End
         End Try
@@ -224,6 +225,71 @@ def:
             Return False
         End Try
     End Function
+
+    Private Sub LoadfromSecondary()
+        Dim Data As String = Nothing
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            Data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        End If
+        Dim parsed As JObject = JObject.Parse(Data)
+        Dim JArrayman As JArray = parsed("accounts")
+        For Each Item As JObject In JArrayman
+            If Item("status") = "Not Verified" Then
+                CheckLogin(Item("username"), Item("password"), True)
+            End If
+        Next
+    End Sub
+
+    Private Sub UpdateSecondary(username As String)
+        Dim Data As String = Nothing
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            Data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        End If
+        Dim parsed As JObject = JObject.Parse(Data)
+        Dim JArrayman As JArray = parsed("accounts")
+        For Each Item As JObject In JArrayman
+            If Item("username") = username Then
+                Item("status") = "Currently Active"
+                Dim milliseconds = CLng(DateTime.UtcNow.Subtract(New DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)
+                Item("timestamp") = milliseconds
+            ElseIf Item("status") = "Not Verified" Then
+            Else
+                Item("status") = "Not Active"
+            End If
+        Next
+    End Sub
+    Private Sub LimitSecondary(username As String)
+
+        Dim Data As String = Nothing
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            Data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        End If
+        Dim parsed As JObject = JObject.Parse(Data)
+        Dim JArrayman As JArray = parsed("accounts")
+        For Each Item As JObject In JArrayman
+            If Item("username") = username Then
+                Item("status") = "Data Exceeded"
+                Dim milliseconds = CLng(DateTime.UtcNow.Subtract(New DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)
+                Item("timestamp") = milliseconds
+            End If
+        Next
+    End Sub
+    Private Sub InvalidSecondary(username As String)
+        Dim Data As String = Nothing
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\accounts.json") Then
+            Data = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\accounts.json")
+        End If
+        Dim parsed As JObject = JObject.Parse(Data)
+        Dim JArrayman As JArray = parsed("accounts")
+        For Each Item As JObject In JArrayman
+            If Item("username") = username Then
+                Item("status") = "Invalid Credentials"
+                Dim milliseconds = CLng(DateTime.UtcNow.Subtract(New DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)
+                Item("timestamp") = milliseconds
+            End If
+        Next
+    End Sub
+
     Private Sub Denotify()
         NotifyIcon1.Visible = False
         NotifyIcon1.Icon = Nothing

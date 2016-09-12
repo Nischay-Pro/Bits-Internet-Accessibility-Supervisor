@@ -48,10 +48,10 @@ Partial Class settings
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.MetroTabPage2.SuspendLayout()
@@ -68,7 +68,7 @@ Partial Class settings
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
         Me.MetroTabControl1.Location = New System.Drawing.Point(23, 63)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 2
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(436, 354)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -96,16 +96,18 @@ Partial Class settings
         '
         'MetroButton3
         '
+        Me.MetroButton3.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.MetroButton3.Location = New System.Drawing.Point(106, 117)
         Me.MetroButton3.Name = "MetroButton3"
         Me.MetroButton3.Size = New System.Drawing.Size(177, 23)
         Me.MetroButton3.TabIndex = 7
-        Me.MetroButton3.Text = "Reset Configuration"
+        Me.MetroButton3.Text = "Reset Application"
         Me.MetroButton3.UseSelectable = True
         '
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel2.Location = New System.Drawing.Point(20, 73)
@@ -117,6 +119,7 @@ Partial Class settings
         'MetroRadioButton3
         '
         Me.MetroRadioButton3.AutoSize = True
+        Me.MetroRadioButton3.BackColor = System.Drawing.Color.Transparent
         Me.MetroRadioButton3.Location = New System.Drawing.Point(258, 73)
         Me.MetroRadioButton3.Name = "MetroRadioButton3"
         Me.MetroRadioButton3.Size = New System.Drawing.Size(47, 15)
@@ -127,6 +130,7 @@ Partial Class settings
         'MetroRadioButton2
         '
         Me.MetroRadioButton2.AutoSize = True
+        Me.MetroRadioButton2.BackColor = System.Drawing.Color.Transparent
         Me.MetroRadioButton2.Location = New System.Drawing.Point(182, 73)
         Me.MetroRadioButton2.Name = "MetroRadioButton2"
         Me.MetroRadioButton2.Size = New System.Drawing.Size(61, 15)
@@ -137,6 +141,7 @@ Partial Class settings
         'MetroRadioButton1
         '
         Me.MetroRadioButton1.AutoSize = True
+        Me.MetroRadioButton1.BackColor = System.Drawing.Color.Transparent
         Me.MetroRadioButton1.Location = New System.Drawing.Point(122, 73)
         Me.MetroRadioButton1.Name = "MetroRadioButton1"
         Me.MetroRadioButton1.Size = New System.Drawing.Size(49, 15)
@@ -146,6 +151,7 @@ Partial Class settings
         '
         'MetroTextBox1
         '
+        Me.MetroTextBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
         '
         '
         '
@@ -177,6 +183,7 @@ Partial Class settings
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel1.Location = New System.Drawing.Point(20, 31)
@@ -366,6 +373,17 @@ Partial Class settings
         Me.MetroLabel4.TabIndex = 14
         Me.MetroLabel4.Text = "Click on OctoCat is view this project on Github " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(and contribute too)"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github
+        Me.PictureBox1.Location = New System.Drawing.Point(42, 146)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 13
+        Me.PictureBox1.TabStop = False
+        '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
@@ -397,17 +415,6 @@ Partial Class settings
         Me.MetroButton2.TabIndex = 6
         Me.MetroButton2.Text = "Close"
         Me.MetroButton2.UseSelectable = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Bits_Internet_Accessibility_Supervisor.My.Resources.Resources.github
-        Me.PictureBox1.Location = New System.Drawing.Point(42, 146)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 13
-        Me.PictureBox1.TabStop = False
         '
         'settings
         '

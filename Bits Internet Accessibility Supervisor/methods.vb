@@ -91,7 +91,7 @@ Module methods
         Information
         Critical
     End Enum
-    Public Sub GenerateNotification(ByVal Message As String, ByVal Type As EventType, ByVal Timeout As Integer)
+    Public Sub GenerateNotification2(ByVal Message As String, ByVal Type As EventType, ByVal Timeout As Integer)
         Dim notman As New notification
         If Type = EventType.Critical Then
             notman.Style = MetroFramework.MetroColorStyle.Red
@@ -115,6 +115,20 @@ Module methods
             x = x - 1
             notman.Location = New Point(x, y)
         Loop
+    End Sub
+    Public Sub GenerateNotification(ByVal Message As String, ByVal Type As EventType, ByVal Timeout As Integer, ByVal Notify As NotifyIcon)
+        If Type = EventType.Critical Then
+            Notify.BalloonTipIcon = ToolTipIcon.Error
+        End If
+        If Type = EventType.Information Then
+            Notify.BalloonTipIcon = ToolTipIcon.Info
+        End If
+        If Type = EventType.Warning Then
+            Notify.BalloonTipIcon = ToolTipIcon.Warning
+        End If
+        Notify.BalloonTipText = Message
+        Notify.BalloonTipTitle = "Bits Internet Accessibility Supervisor"
+        Notify.ShowBalloonTip(Timeout)
     End Sub
     Friend Function GetProcessorId() As String
         Dim strProcessorId As String = String.Empty

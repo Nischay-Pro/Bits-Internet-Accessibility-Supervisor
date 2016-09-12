@@ -60,12 +60,12 @@ def:
                 End
             ElseIf browser.Document.Body.InnerText.Contains("Your data transfer has been exceeded, Please contact the administrator") Then
                 Log("Data Transfer Exceeded")
-                GenerateNotification("Your data transfer has exceeded. :(", EventType.Warning, 5000)
+                GenerateNotification2("Your data transfer has exceeded. :(", EventType.Warning, 5000)
             ElseIf browser.Document.Body.InnerText.Contains("The system could not log you on. Make sure your password is correct") Then
-                GenerateNotification("Your credentials were incorrect. Retry again.", EventType.Warning, 5000)
+                GenerateNotification2("Your credentials were incorrect. Retry again.", EventType.Warning, 5000)
                 Log("Invalid Credentials")
             Else
-                GenerateNotification("Server is not responding. Please try again later", EventType.Warning, 5000)
+                GenerateNotification2("Server is not responding. Please try again later", EventType.Warning, 5000)
                 Log("Server Crash")
             End If
         Else

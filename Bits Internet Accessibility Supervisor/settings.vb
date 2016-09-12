@@ -60,7 +60,7 @@ Public Class settings
         MetroButton1.Enabled = False
         MetroButton2.Enabled = True
         MetroTabControl1.Focus()
-        GenerateNotification("Settings Saved Successfully.", EventType.Information, 3000)
+        GenerateNotification2("Settings Saved Successfully.", EventType.Information, 3000)
     End Sub
     Private Sub ChangeDetect()
         MetroButton1.Enabled = True
@@ -152,7 +152,7 @@ Public Class settings
             writecommand.WriteLine("reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" & " /V """ & appname & """" & " /t REG_SZ /F /D """ & apploc & """")
             writecommand.Close()
         Catch ex As Exception
-            GenerateNotification("Unable to register entry", EventType.Critical, 5000)
+            GenerateNotification2("Unable to register entry", EventType.Critical, 5000)
         End Try
     End Sub
     Private Sub RegKeyDelete()
@@ -175,7 +175,7 @@ Public Class settings
             writecommand.Close()
             processman.WaitForExit()
         Catch ex As Exception
-            GenerateNotification("Unable to deregister entry", EventType.Critical, 5000)
+            GenerateNotification2("Unable to deregister entry", EventType.Critical, 5000)
         End Try
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -189,6 +189,7 @@ Public Class settings
     Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
         If MessageBox.Show("Are you sure you want to reset your Settings?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Kill(My.Application.Info.DirectoryPath & "\config.ini")
+            Kill(My.Application.Info.DirectoryPath & "\accounts.json")
             Process.Start(Application.ExecutablePath)
             End
         End If

@@ -141,7 +141,7 @@ ad:
         If profilename = "" Then
             settings.Show()
         ElseIf WithNotification = True And Not Environment.CommandLine.Contains("-hidden") Then
-            GenerateNotification("Welcome " & profilename & ". You have been logged in successfully.", EventType.Information, 2000)
+            GenerateNotification("Welcome " & profilename & ". You have been logged in successfully.", EventType.Information, 2000, NotifyIcon1)
         End If
         If ini.GetKeyValue("Settings", "LogoutClose") = "True" Then
             LogoutClose = True
@@ -260,5 +260,29 @@ startman:
         Denotify()
         Process.Start(Application.ExecutablePath, "-logout")
         End
+    End Sub
+
+    Private Sub Label2_MouseEnter(sender As Object, e As EventArgs) Handles Label2.MouseEnter
+        Label2.BackColor = Color.LightGray
+    End Sub
+
+    Private Sub Label2_MouseLeave(sender As Object, e As EventArgs) Handles Label2.MouseLeave
+        Label2.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub Label10_MouseEnter(sender As Object, e As EventArgs) Handles Label10.MouseEnter
+        Label10.BackColor = Color.LightGray
+    End Sub
+
+    Private Sub Label10_MouseLeave(sender As Object, e As EventArgs) Handles Label10.MouseLeave
+        Label10.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub Label7_MouseEnter(sender As Object, e As EventArgs) Handles Label7.MouseEnter
+        Label7.BackColor = Color.LightGray
+    End Sub
+
+    Private Sub Label7_MouseLeave(sender As Object, e As EventArgs) Handles Label7.MouseLeave
+        Label7.BackColor = Color.Transparent
     End Sub
 End Class
