@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -42,7 +43,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +98,18 @@ Partial Class Form1
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label11.Location = New System.Drawing.Point(377, 7)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(13, 19)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "|"
         '
         'Label10
         '
@@ -223,18 +235,6 @@ Partial Class Form1
         'Timer3
         '
         Me.Timer3.Enabled = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Malgun Gothic", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.Label11.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label11.Location = New System.Drawing.Point(377, 7)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(13, 19)
-        Me.Label11.TabIndex = 13
-        Me.Label11.Text = "|"
         '
         'Form1
         '

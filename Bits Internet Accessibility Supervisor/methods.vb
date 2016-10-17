@@ -186,7 +186,7 @@ Module methods
 
 
     Friend Function getMD5Hash(ByVal strToHash As String) As String
-        Dim md5Obj As New System.Security.Cryptography.MD5CryptoServiceProvider
+        Dim md5Obj As New MD5CryptoServiceProvider
         Dim bytesToHash() As Byte = System.Text.Encoding.ASCII.GetBytes(strToHash)
 
         bytesToHash = md5Obj.ComputeHash(bytesToHash)
@@ -258,7 +258,7 @@ Module methods
             If ini.GetKeyValue("Settings", "Logs") = "True" Then
                 Dim clean As String = DateAndTime.Today.ToString("d")
                 clean = clean.Replace("-", "")
-                My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\logs\" & clean & ".txt", "[" & DateTime.Now.ToLocalTime & "]" & Message & vbNewLine, True)
+                My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\logs\" & clean & ".log", "[" & DateTime.Now.ToLocalTime & "] " & Message & vbNewLine, True)
             End If
             Dim prevdays As New ListBox
             Dim i As Integer = 0

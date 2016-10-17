@@ -69,6 +69,7 @@ Public Class loadman
         browser.ScriptErrorsSuppressed = True
         browser.Navigate("http://172.16.0.30:8090/httpclient.html")
         SetProgress(30, MetroProgressBar1)
+        Dim counterman As Integer = 0
 abc:
         If browser.ReadyState = WebBrowserReadyState.Complete Then
             Try
@@ -99,8 +100,16 @@ abc:
                 End If
             End Try
         Else
-            wait(500)
-            GoTo abc
+            If counterman <> 10 Then
+                wait(500)
+                counterman += 1
+                GoTo abc
+            Else
+                Log("Cannot Connect to Cyberoam")
+                MsgBox("Couldn't Connect to Cyberoam. Either Cyberoam is down or your not connected to a Cyberoam Network.", MsgBoxStyle.Exclamation, "Cyberoam Connection Failure")
+                Denotify()
+                End
+            End If
         End If
 def:
         SetProgress(80, MetroProgressBar1)
@@ -169,6 +178,7 @@ def:
     End Sub
     Private Sub loadman_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Log("Started Application")
+        Log("Application Version : " & My.Application.Info.Version.ToString)
         Log("Parameters Loaded")
         Log(Environment.CommandLine)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath & "\version.txt", My.Application.Info.Version.ToString, False)

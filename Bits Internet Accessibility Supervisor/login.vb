@@ -97,4 +97,30 @@ def:
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Timer1.Start()
+        If MetroTextBox1.Text <> Nothing And MetroTextBox2.Text <> Nothing Then
+            Dim ini As New IniFile
+            Log("Loading Configuration")
+            If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath & "\config.ini") Then
+                Log("Found Configuration")
+                ini.Load(My.Application.Info.DirectoryPath & "\config.ini")
+                ini.AddSection("Authentication")
+                ini.SetKeyValue("Authentication", "Username", MetroTextBox1.Text)
+                'ini.SetKeyValue("Authentication", "Password", EncryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), MetroTextBox2.Text))
+                ini.SetKeyValue("Authentication", "Password", MetroTextBox2.Text)
+                ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
+                CheckLogin()
+            Else
+                Log("Nope. Couldn't find. Newcomer. But how?")
+                ini.AddSection("Authentication")
+                ini.SetKeyValue("Authentication", "Username", MetroTextBox1.Text)
+                'ini.SetKeyValue("Authentication", "Password", EncryptString(getMD5Hash(GetMotherBoardID() & GetProcessorId() & GetVolumeSerial()), MetroTextBox2.Text))
+                ini.SetKeyValue("Authentication", "Password", MetroTextBox2.Text)
+                ini.Save(My.Application.Info.DirectoryPath & "\config.ini")
+                CheckLogin()
+            End If
+        End If
+    End Sub
 End Class

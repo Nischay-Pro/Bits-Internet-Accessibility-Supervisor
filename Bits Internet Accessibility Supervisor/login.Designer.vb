@@ -32,6 +32,7 @@ Partial Class login
         Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,11 +159,23 @@ Partial Class login
         '
         Me.Timer1.Interval = 15000
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(535, 302)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(10, 10)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
         'login
         '
+        Me.AcceptButton = Me.Button1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(439, 405)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -185,4 +198,5 @@ Partial Class login
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Button1 As Button
 End Class
